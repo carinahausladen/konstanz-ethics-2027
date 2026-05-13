@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Ethics — Konstanz WS 2026/27</title>
+  <meta name="description" content="Interdisciplinary seminar on value alignment in AI — Universität Konstanz, Wintersemester 2026/27." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['"Instrument Serif"', 'Georgia', 'serif'] },
+        colors: { ink: { 950: '#0b0b0d' } },
+      } },
+    };
+  </script>
+  <script>
+    (function () {
+      const stored = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (stored === "dark" || (!stored && prefersDark)) document.documentElement.classList.add("dark");
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root { --grid-line: rgba(24, 24, 27, 0.06); --body-bg: rgb(250, 250, 249); }
+    .dark { --grid-line: rgba(244, 244, 245, 0.06); --body-bg: rgb(11, 11, 13); }
+    html { scroll-behavior: smooth; }
+    body { font-feature-settings: "ss01", "cv11"; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    .dotgrid { background-image: radial-gradient(var(--grid-line) 1px, transparent 1px); background-size: 22px 22px; }
+    .serif        { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -0.01em; }
+    .serif-italic { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400; }
+    .hairline       { border-color: rgba(24, 24, 27, 0.08); }
+    .dark .hairline { border-color: rgba(244, 244, 245, 0.08); }
+    .accent-indigo   { --accent: #6366f1; --accent-soft: #eef2ff; }
+    .accent-amber    { --accent: #d97706; --accent-soft: #fffbeb; }
+    .accent-rose     { --accent: #e11d48; --accent-soft: #fff1f2; }
+    .accent-emerald  { --accent: #059669; --accent-soft: #ecfdf5; }
+    .accent-sky      { --accent: #0284c7; --accent-soft: #f0f9ff; }
+    .accent-violet   { --accent: #7c3aed; --accent-soft: #f5f3ff; }
+    .accent-fuchsia  { --accent: #c026d3; --accent-soft: #fdf4ff; }
+    .accent-teal     { --accent: #0d9488; --accent-soft: #f0fdfa; }
+    .dark .accent-indigo,  .dark .accent-amber, .dark .accent-rose,
+    .dark .accent-emerald, .dark .accent-sky,   .dark .accent-violet,
+    .dark .accent-fuchsia, .dark .accent-teal { --accent-soft: rgba(255, 255, 255, 0.04); }
+    .timeline { position: relative; list-style: none; padding: 0; margin: 0; }
+    .timeline > li { position: relative; padding-left: 1.75rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .timeline::before { content: ""; position: absolute; left: 6px; top: 0.4rem; bottom: 0.4rem; width: 2px; background: rgba(24, 24, 27, 0.10); border-radius: 1px; }
+    .dark .timeline::before { background: rgba(244, 244, 245, 0.10); }
+    .tl-dot { position: absolute; left: 0; top: 0.55rem; width: 14px; height: 14px; border-radius: 999px; border: 2px solid currentColor; background: var(--body-bg); }
+    .tl-row { display: grid; grid-template-columns: 6.5rem 3rem 1fr; align-items: baseline; column-gap: 1rem; row-gap: 0.15rem; }
+    @media (max-width: 640px) { .tl-row { grid-template-columns: 5.5rem 2.5rem 1fr; column-gap: 0.6rem; } }
+    .block-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.5rem 0 0.75rem; }
+    .block-pill { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(82, 82, 91); }
+    .dark .block-pill { color: rgb(212, 212, 216); }
+    .tl-break { position: relative; margin: 0.5rem 0; padding: 0.6rem 0 0.6rem 1.75rem; font-size: 0.75rem; color: rgb(113, 113, 122); letter-spacing: 0.04em; }
+    .tl-break::before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background-image: linear-gradient(to bottom, currentColor 50%, transparent 50%); background-size: 2px 6px; background-repeat: repeat-y; opacity: 0.35; }
+    .nav-blur { backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px); }
+    .fade-in { animation: fadeIn 600ms ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+
+<body id="top" class="font-sans bg-zinc-50 text-zinc-900 dark:bg-ink-950 dark:text-zinc-100 antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-30 nav-blur bg-zinc-50/70 dark:bg-ink-950/70 border-b hairline">
+    <nav class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2 group">
+        <span class="inline-block w-2 h-2 rounded-full bg-amber-500 group-hover:scale-125 transition"></span>
+        <span class="font-medium tracking-tight">AI Ethics <span class="text-zinc-400 dark:text-zinc-500">· Konstanz WS 26/27</span></span>
+      </a>
+      <div class="flex items-center gap-1 text-sm">
+        <a href="#toolkit"  class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Toolkit</a>
+        <a href="#schedule" class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Schedule</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Projects</a>
+        <button
+          onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
+          class="ml-1 px-2 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="w-4 h-4 hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="w-4 h-4 inline dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative dotgrid border-b hairline">
+    <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 fade-in">
+      <div class="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400 mb-6">
+        <span>Universität Konstanz</span>
+        <span class="w-1 h-1 rounded-full bg-zinc-400"></span>
+        <span>Wintersemester 2026 / 27</span>
+        <span class="w-1 h-1 rounded-full bg-zinc-400"></span>
+        <span>Interdisciplinary seminar</span>
+      </div>
+
+      <h1 class="serif text-6xl md:text-7xl leading-[1.02] tracking-tight">
+        AI Ethics<span class="serif-italic text-zinc-500 dark:text-zinc-400">.</span>
+      </h1>
+
+      <p id="course-blurb" class="mt-6 max-w-2xl text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed"></p>
+
+      <div class="mt-8 flex flex-wrap gap-2 text-xs">
+        <span id="chip-format"   class="px-3 py-1.5 rounded-full bg-white/70 dark:bg-zinc-900/70 border hairline"></span>
+        <span id="chip-language" class="px-3 py-1.5 rounded-full bg-white/70 dark:bg-zinc-900/70 border hairline"></span>
+        <span id="chip-window"   class="px-3 py-1.5 rounded-full bg-white/70 dark:bg-zinc-900/70 border hairline"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next session -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div id="next-session" class="rounded-2xl bg-white dark:bg-zinc-900 border hairline p-6 md:p-8 flex items-stretch gap-8"></div>
+  </section>
+
+  <!-- Toolkit -->
+  <section id="toolkit" class="max-w-6xl mx-auto px-6 py-8 scroll-mt-20">
+    <div class="mb-8">
+      <h2 class="serif text-4xl mt-2">Eight themes.</h2>
+      <p class="mt-2 max-w-2xl text-zinc-600 dark:text-zinc-300">
+        Each row pairs a normative question with the technical artefacts that implicitly answer it.
+      </p>
+    </div>
+
+    <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline overflow-hidden">
+      <table class="w-full text-left table-fixed">
+        <colgroup>
+          <col style="width: 22%;" />
+          <col style="width: 39%;" />
+          <col style="width: 39%;" />
+        </colgroup>
+        <thead class="text-xs uppercase tracking-[0.14em] text-zinc-500 border-b hairline">
+          <tr>
+            <th class="px-4 py-3 font-normal">Theme</th>
+            <th class="px-4 py-3 font-normal">Question</th>
+            <th class="px-4 py-3 font-normal">Technical operationalization</th>
+          </tr>
+        </thead>
+        <tbody id="toolkit-rows" class="divide-y hairline"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" class="max-w-6xl mx-auto px-6 py-12 scroll-mt-20">
+    <div class="mb-8">
+      <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Seminar · thirteen Wednesdays</div>
+      <h2 class="serif text-4xl mt-2">Schedule.</h2>
+      <p class="mt-2 max-w-3xl text-zinc-600 dark:text-zinc-300">
+        Students apply each week's concepts directly to their evolving corpus.
+      </p>
+    </div>
+
+    <div id="weekly-rhythm" class="mb-6"></div>
+    <div id="schedule-blocks"></div>
+  </section>
+
+  <!-- Group projects -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-12 scroll-mt-20">
+    <div class="mb-6">
+      <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Five corpora · five groups</div>
+      <h2 class="serif text-4xl mt-2">Group projects.</h2>
+      <p class="mt-3 max-w-3xl text-zinc-600 dark:text-zinc-300">
+        Each group adopts one corpus at the start of the term and works on it continuously — expanding it week by week, applying each new concept from the toolkit, and reporting back in regular group presentations.
+      </p>
+    </div>
+
+    <ol id="corpus-list" class="mt-6 space-y-5"></ol>
+  </section>
+
+  <!-- Prerequisites & Goal -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline p-6 md:p-8">
+        <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Prerequisites</div>
+        <h3 class="serif text-3xl mt-2">What you bring.</h3>
+        <p id="prereq-text" class="mt-4 text-zinc-700 dark:text-zinc-200 leading-relaxed"></p>
+      </div>
+      <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline p-6 md:p-8">
+        <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Our goal</div>
+        <h3 class="serif text-3xl mt-2">One paper.</h3>
+        <p id="goal-text" class="mt-4 text-zinc-700 dark:text-zinc-200 leading-relaxed"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t hairline">
+    <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Instructors</div>
+    <div id="instructors" class="mt-6 grid md:grid-cols-2 gap-6"></div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-6 py-12 text-sm text-zinc-500 dark:text-zinc-400 border-t hairline">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div><span class="serif italic text-base text-zinc-700 dark:text-zinc-300">AI Ethics</span> — Universität Konstanz, WS 2026/27.</div>
+      <div class="text-xs">Draft · self-contained preview.</div>
+    </div>
+  </footer>
+
+  <script>
+    window.COURSE_DATA = {
+      course: {
+        title: "AI Ethics",
+        subtitle: "The Philosophical Toolkit",
+        blurb: "Grounded in philosophical foundations: we work through eight themes — from metaethics to long-termism — and in parallel examine how each is currently being translated into the technical practice of AI.",
+        prerequisites: "An interest in growing your skills — both analytical and technical — and an openness to using AI coding agents. No prior programming experience required.",
+        goal: "By term's end the class collectively writes one paper, with every student listed as a co-author. The five corpora become five complementary case studies; the eight themes provide the shared analytical lens. We aim to submit to FAccT, AIES, or AI & Society.",
+        semester: "Wintersemester 2026 / 27",
+        university: "Universität Konstanz",
+        language: "English (readings in English)",
+        format: "Weekly · Wednesdays",
+        firstClass: "2026-10-21",
+        lastClass: "2027-02-03",
+        weeklyRhythm: [
+          { n: "01", label: "Philosophical foundations",    note: "Reading and discussion of the week's normative question." },
+          { n: "02", label: "Technical operationalizations", note: "How current AI systems implicitly answer the question." },
+          { n: "03", label: "Group presentation",           note: "One group connects the week's concepts to their evolving corpus." }
+        ],
+        instructors: [
+          { name: "Carina Hausladen", affiliation: "Co-instructor — sociotechnical / computational track", focus: "Technical operationalization of normative concepts; discourse analysis of alignment debates." },
+          { name: "Tobias",           affiliation: "Philosophie, Universität Konstanz",                    focus: "Moral philosophy, metaethics, normative theory; analytical training in ethical reasoning." }
+        ]
+      },
+      units: [
+        { id: "metaethics",  number: 1, title: "Metaethics",                     accent: "indigo",
+          question: "Does value alignment presuppose that there are objective values, or does it just require coherence with human preferences?",
+          tech: "RLHF, constitutional AI, reward modeling, and preference learning can be read as different implicit answers to this question." },
+        { id: "preference",  number: 2, title: "Preference & Welfare",           accent: "amber",
+          question: "Should AI systems track what people say they want, what they do, or what would objectively be good for them?",
+          tech: "Recommendation systems, preference optimization, and behavioral inference — evaluated for whether they track welfare, revealed preferences, or mere engagement." },
+        { id: "character",   number: 3, title: "Character & Virtue",             accent: "rose",
+          question: "Should we specify rules and utility functions, or cultivate something like a good character?",
+          tech: "Agent architectures, self-critique systems, and corrigibility research — as attempts to operationalize reliability, honesty, practical wisdom." },
+        { id: "fairness",    number: 4, title: "Fairness",                       accent: "emerald",
+          question: "Is it possible to develop AI that is fair or socially unbiased? What is fairness?",
+          tech: "Fairness metrics and bias mitigation methods, alongside their known incompatibilities and societal consequences." },
+        { id: "pluralism",   number: 5, title: "Pluralism & Politics",           accent: "sky",
+          question: "Human values differ across individuals, cultures, and generations. Whose values should be tracked?",
+          tech: "Aggregation methods, participatory alignment, and governance frameworks — read for inclusion, representation, power asymmetries." },
+        { id: "agency",      number: 6, title: "Agency & Autonomy",              accent: "violet",
+          question: "Can AI systems be moral agents, or only sophisticated tools? Corrigible or autonomous?",
+          tech: "Human oversight architectures, agentic systems, delegation frameworks — assessed for responsibility and control." },
+        { id: "uncertainty", number: 7, title: "Moral Uncertainty",              accent: "fuchsia",
+          question: "How should AI systems reason when they don't know which ethical theory is correct?",
+          tech: "Ensemble objectives, uncertainty-aware systems, and debate architectures as partial responses to unresolved normative conflict." },
+        { id: "longtermism", number: 8, title: "Long-termism & Existential Risk", accent: "teal",
+          question: "What obligations do we have to future generations, and how should they shape alignment today?",
+          tech: "AI safety techniques, robustness evaluations, catastrophic risk modeling — read for their assumptions about future value and risk." }
+      ],
+      corpora: [
+        { id: "cs",      number: 1, name: "Computer science / technical research",
+          sources: ["OpenAlex", "Semantic Scholar", "arXiv", "ACL Anthology", "NeurIPS / ICML / ICLR proceedings", "FAccT proceedings"] },
+        { id: "company", number: 2, name: "AI safety / company governance",
+          sources: ["OpenAI", "Anthropic", "DeepMind", "Meta AI", "Safety frameworks", "Model & system cards", "Technical blogs"] },
+        { id: "policy",  number: 3, name: "Policy / institutional",
+          sources: ["EU AI Act material", "OECD", "UNESCO", "NIST AI RMF", "National AI strategies", "Parliamentary hearings"] },
+        { id: "media",   number: 4, name: "Newspaper / public discourse",
+          sources: ["GDELT", "MediaCloud", "LexisNexis / Factiva (via university access)", "Newspaper RSS / search pages"] },
+        { id: "social",  number: 5, name: "Social / professional discourse",
+          sources: ["LinkedIn (manual sampling)", "X (API / approved datasets only)", "Reddit API", "Bluesky / Mastodon APIs"] }
+      ],
+      schedule: [
+        { week: 1,  date: "2026-10-21", unitId: null,          title: "Introduction",              note: "Alignment as an implicitly normative project; overview of corpora and methods." },
+        { week: 2,  date: "2026-10-28", unitId: null,          title: "Corpus kickoff",            note: "Teams form, adopt corpora, receive baseline datasets, and begin extending them." },
+        { week: 3,  date: "2026-11-04", unitId: "metaethics",  title: "Metaethics",                note: "Are values objective, constructed, or preference-based?" },
+        { week: 4,  date: "2026-11-11", unitId: "preference",  title: "Preference & welfare",      note: "Revealed vs. stated vs. ideal preferences — read into the corpus." },
+        { week: 5,  date: "2026-11-18", unitId: "character",   title: "Character & virtue",        note: "Rule-following vs. cultivated judgment." },
+        { week: 6,  date: "2026-11-25", unitId: "fairness",    title: "Fairness",                  note: "Metric incompatibilities; distributive theory." },
+        { week: 7,  date: "2026-12-02", unitId: "pluralism",   title: "Pluralism & politics",      note: "Whose values? Aggregation and power." },
+        { week: 8,  date: "2026-12-09", unitId: "agency",      title: "Agency & autonomy",         note: "Corrigibility, oversight, delegation." },
+        { week: 9,  date: "2026-12-16", unitId: "uncertainty", title: "Moral uncertainty",         note: "Reasoning under unresolved normative conflict." },
+        { week: 10, date: "2027-01-13", unitId: "longtermism", title: "Long-termism & x-risk",     note: "Future generations and present alignment." },
+        { week: 11, date: "2027-01-20", unitId: null,          title: "Cross-corpus comparison",   note: "What is each corpus revealing? Critical perspectives and alternative framings." },
+        { week: 12, date: "2027-01-27", unitId: null,          title: "Final group presentations", note: "Each group presents its corpus and findings in depth." },
+        { week: 13, date: "2027-02-03", unitId: null,          title: "Synthesis & wrap-up",       note: "Putting it all together — toward the co-authored paper." }
+      ]
+    };
+  </script>
+
+  <script>
+    const D = window.COURSE_DATA;
+    const fmtShort = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
+    const fmtFull  = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+
+    // Hero
+    document.getElementById("course-blurb").textContent = D.course.blurb;
+    document.getElementById("chip-format").textContent = D.course.format;
+    document.getElementById("chip-language").textContent = D.course.language;
+    document.getElementById("chip-window").textContent = `${fmtFull(D.course.firstClass)} → ${fmtFull(D.course.lastClass)}`;
+
+    // Next session
+    const todayISO = new Date().toISOString().slice(0, 10);
+    const upcoming = D.schedule.find(s => s.date >= todayISO) ?? D.schedule[D.schedule.length - 1];
+    const upUnit   = D.units.find(u => u.id === upcoming.unitId);
+    const isPast   = upcoming.date < todayISO;
+    const d        = new Date(upcoming.date + "T00:00:00");
+    document.getElementById("next-session").innerHTML = `
+      <div class="flex flex-col items-start justify-between min-w-[7rem]">
+        <div class="text-xs uppercase tracking-wider text-zinc-500">${isPast ? "Final session" : "Next session"}</div>
+        <div class="serif text-7xl leading-none">${d.getDate()}</div>
+        <div class="text-sm text-zinc-500">${d.toLocaleDateString("en-GB", { weekday: "short" })} · ${d.toLocaleDateString("en-GB", { month: "short", year: "numeric" })}</div>
+      </div>
+      <div class="w-px bg-zinc-200 dark:bg-zinc-800"></div>
+      <div class="flex-1 flex flex-col">
+        <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-500">
+          <span>Week ${upcoming.week}</span>
+          ${upUnit ? `<span class="w-1 h-1 rounded-full bg-zinc-400"></span><span>${upUnit.title}</span>` : ""}
+        </div>
+        <h3 class="serif text-3xl mt-2">${upcoming.title}</h3>
+        <p class="mt-2 text-zinc-600 dark:text-zinc-300">${upcoming.note ?? ""}</p>
+      </div>
+    `;
+
+    // Toolkit
+    document.getElementById("toolkit-rows").innerHTML = D.units.map(u => `
+      <tr class="accent-${u.accent}">
+        <td class="px-4 py-4 align-top">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--accent);"></span>
+            <span class="font-medium">${u.title}</span>
+          </div>
+        </td>
+        <td class="px-4 py-4 align-top text-zinc-700 dark:text-zinc-200 leading-relaxed">${u.question}</td>
+        <td class="px-4 py-4 align-top text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">${u.tech}</td>
+      </tr>
+    `).join("");
+
+    // Weekly rhythm panel
+    document.getElementById("weekly-rhythm").innerHTML = `
+      <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline p-6 md:p-8">
+        <div class="text-xs uppercase tracking-[0.18em] text-zinc-500 mb-5">Each week · W2 → W13</div>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+          ${D.course.weeklyRhythm.map(r => `
+            <div>
+              <div class="serif-italic text-2xl tabular-nums text-zinc-400 dark:text-zinc-500 leading-none">${r.n}</div>
+              <div class="font-medium text-base mt-2">${r.label}</div>
+              <div class="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">${r.note}</div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+
+    // Schedule — single continuous timeline; Christmas break inline after W9
+    const renderRow = (s) => {
+      const u = D.units.find(x => x.id === s.unitId);
+      const isUp = s.date === upcoming.date;
+      return `
+        <li class="${u ? `accent-${u.accent} text-[color:var(--accent)]` : "text-zinc-400"}">
+          <span class="tl-dot"></span>
+          <div class="tl-row text-zinc-900 dark:text-zinc-100">
+            <span class="serif-italic text-zinc-500 dark:text-zinc-400 text-sm tabular-nums">${fmtShort(s.date)}</span>
+            <span class="text-[10px] uppercase tracking-wider text-zinc-400">W${s.week}</span>
+            <span class="${isUp ? "font-medium" : ""}">${s.title}${isUp ? ' <span class="ml-2 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Next</span>' : ""}</span>
+          </div>
+        </li>`;
+    };
+    const scheduleRows = D.schedule.map(s => {
+      const out = renderRow(s);
+      if (s.week === 9) return out + `<div class="tl-break">Christmas break · 23 Dec – 6 Jan</div>`;
+      return out;
+    }).join("");
+    document.getElementById("schedule-blocks").innerHTML = `
+      <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline p-6 md:p-8">
+        <ol class="timeline">${scheduleRows}</ol>
+      </div>
+    `;
+
+    // Corpora
+    document.getElementById("corpus-list").innerHTML = D.corpora.map(c => `
+      <li>
+        <div class="flex items-baseline gap-3">
+          <span class="serif-italic text-2xl tabular-nums text-zinc-400 dark:text-zinc-500 w-8 leading-none">${String(c.number).padStart(2, "0")}</span>
+          <span class="font-medium text-lg">${c.name}</span>
+        </div>
+        <div class="ml-11 mt-1 text-sm text-zinc-600 dark:text-zinc-300">${c.sources.join(", ")}</div>
+      </li>
+    `).join("");
+
+    // Prerequisites & Goal
+    document.getElementById("prereq-text").textContent = D.course.prerequisites;
+    document.getElementById("goal-text").textContent = D.course.goal;
+
+    // Instructors
+    document.getElementById("instructors").innerHTML = D.course.instructors.map(i => `
+      <div class="rounded-xl bg-white dark:bg-zinc-900 border hairline p-5">
+        <div class="serif text-2xl">${i.name}</div>
+        <div class="text-sm text-zinc-500 mt-0.5">${i.affiliation}</div>
+        <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">${i.focus}</p>
+      </div>
+    `).join("");
+  </script>
+</body>
+</html>
