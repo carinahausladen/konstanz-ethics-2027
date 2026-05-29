@@ -1,0 +1,17 @@
+# Local working notes — kept private, NOT published to this public repo
+conferences.md
+corpi.md
+topics.md
+tobias opinion.md
+wintersemester dates.md
+
+# Alternate two-page site design (draft, not served)
+index-draft.html
+schedule.html
+data.js
+styles.css
+
+# Editor / OS / tooling
+.idea/
+.DS_Store
+.claude/
