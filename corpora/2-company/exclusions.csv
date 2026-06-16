@@ -1,0 +1,19 @@
+company,id_or_url,claimed_as,ground_truth,reason_code,note
+meta,arXiv:2403.17141,MetaAligner (Meta),MetaAligner — Univ. of Manchester (NeurIPS 2024); NOT Meta,NOT_COMPANY_AUTHORED,'Meta' in title is a method name; no Meta/FAIR author.
+meta,arXiv:2602.07799,MetaAligner (Meta) [old data label],Fairness Aware Reward Optimization (FARO) — MIT; NOT Meta,MISLABELED_NOT_COMPANY,Prior registry label wrong on both title and affiliation; removed.
+meta,arXiv:2307.09288,Llama 2,"Genuine Meta paper, not selected as anchor",NOT_SELECTED_ANCHOR,Llama Guard chosen as the cleaner alignment-framed anchor.
+anthropic,arXiv:2310.13798,Specific versus General Principles for Constitutional AI,Genuine Anthropic paper,DESELECTED_DEDUP,Passes criteria; deselected 2026-06-09 to dedup with the CAI anchor (files kept locally).
+anthropic,arXiv:2507.14805,Subliminal Learning,Anthropic Fellows lead; Truthful AI co-authors,LOW_SALIENCE,Borderline affiliation + not value-spec/governance; dropped to respect cap.
+anthropic,arXiv:2506.18032,Why Do Some Language Models Fake Alignment,Third-party study about an Anthropic phenomenon,THIRD_PARTY_ABOUT,Not under Anthropic byline.
+anthropic,petri-open-source-auditing,Petri auditing tool,"Anthropic, alignment-framed",EVALS_TOOLING_CAP,"Auditing/evals tool, not value-spec/method; cut to cap."
+openai,detecting-and-reducing-scheming,Detecting and reducing scheming,"OpenAI + Apollo, OpenAI-hosted",CAP_OVERFLOW,Qualifies but dropped to respect public cap; strong alternate.
+openai,arXiv:2509.24394,Critique of OpenAI Preparedness Framework,External critique,THIRD_PARTY_ABOUT,No OpenAI authorship.
+openai,MIRI/Zvi responses,Responses to OpenAI safety views,Third-party commentary,THIRD_PARTY_ABOUT,"Commentary about OpenAI, not by it."
+microsoft,arXiv:2503.05731,AILuminate (mis-attributed to Microsoft),MLCommons AI Risk & Reliability benchmark,WRONG_ATTRIBUTION,MLCommons-authored; fails authorship rule even with MS participation.
+microsoft,arXiv:2412.08905,Phi-4 Technical Report,Microsoft capability report,OUT_OF_SCOPE_CAPABILITY,No distinct alignment/safety framing as salience driver.
+deepmind,FSF v1.0/v2.0,Earlier Frontier Safety Framework versions,"DeepMind, superseded",SUPERSEDED,Only current v3.1 retained to avoid double-counting.
+deepmind,gemini_3_pro_fsf_report,Gemini 3 Pro FSF Report,Per-model eval report,OUT_OF_SCOPE_MODEL_CARD,"Model card, not a strategic value/governance statement."
+deepmind,arXiv:2504.18530 / 2502.04675,"Scaling Laws for Scalable Oversight, etc.",Topically related,THIRD_PARTY,Not Google DeepMind-authored/hosted.
+openai,arXiv:2411.01111,Rule Based Rewards for Language Model Safety,Genuine OpenAI safety-alignment method,LOCAL_ORPHAN_CANDIDATE,"In-window, qualifies; not in capped set. Strong re-add candidate (file present locally)."
+deepmind,arXiv:1912.05652,Learning Human Objectives by Evaluating Hypothetical Behavior,Reward-learning paper,LOCAL_ORPHAN_NOT_SELECTED,Earlier exploratory download; superseded by selected oversight/reward-modeling docs.
+microsoft,arXiv:2505.02009,Towards Safer Pretraining: Filtering Harmful Web Content,Pretraining safety/filtering,LOCAL_ORPHAN_NOT_SELECTED,"Earlier exploratory download; not selected (data-filtering, weaker value-spec fit)."

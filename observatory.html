@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Media Observatory — AI Ethics, Konstanz WS 2026/27</title>
+  <meta name="description" content="A weekly close-reading of live AI-ethics discourse on X, LinkedIn, and Bluesky." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: { extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['"Instrument Serif"', 'Georgia', 'serif'] },
+        colors: { ink: { 950: '#0b0b0d' } },
+      } },
+    };
+  </script>
+  <script>
+    (function () {
+      const stored = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (stored === "dark" || (!stored && prefersDark)) document.documentElement.classList.add("dark");
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root { --grid-line: rgba(24, 24, 27, 0.06); }
+    .dark { --grid-line: rgba(244, 244, 245, 0.06); }
+    html { scroll-behavior: smooth; }
+    body { font-feature-settings: "ss01", "cv11"; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    .dotgrid { background-image: radial-gradient(var(--grid-line) 1px, transparent 1px); background-size: 22px 22px; }
+    .serif        { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -0.01em; }
+    .serif-italic { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400; }
+    .hairline       { border-color: rgba(24, 24, 27, 0.08); }
+    .dark .hairline { border-color: rgba(244, 244, 245, 0.08); }
+    .accent-amber { --accent: #d97706; --accent-soft: #fffbeb; }
+    .accent-sky   { --accent: #0284c7; --accent-soft: #f0f9ff; }
+    .accent-teal  { --accent: #0d9488; --accent-soft: #f0fdfa; }
+    .dark .accent-amber, .dark .accent-sky, .dark .accent-teal { --accent-soft: rgba(255, 255, 255, 0.04); }
+    .nav-blur { backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px); }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+
+<body class="font-sans bg-zinc-50 text-zinc-900 dark:bg-ink-950 dark:text-zinc-100 antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-30 nav-blur bg-zinc-50/70 dark:bg-ink-950/70 border-b hairline">
+    <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group text-sm">
+        <span class="text-zinc-400 group-hover:-translate-x-0.5 transition">←</span>
+        <span class="font-medium tracking-tight">AI Ethics <span class="text-zinc-400 dark:text-zinc-500">· Konstanz WS 26/27</span></span>
+      </a>
+      <button
+        onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
+        class="px-2 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="w-4 h-4 hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="w-4 h-4 inline dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="dotgrid border-b hairline">
+    <div class="max-w-3xl mx-auto px-6 pt-14 pb-12">
+      <div class="text-xs uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400 mb-5">Group projects · weekly · 3–5 min</div>
+      <h1 class="serif text-5xl leading-[1.05] tracking-tight">Social Media Observatory<span class="serif-italic text-zinc-500 dark:text-zinc-400">.</span></h1>
+      <p class="mt-5 text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
+        Each week, every group brings the standout posts where its stakeholders are talking about
+        <strong>your corpus</strong> — and maps them onto the themes. A few minutes on AI ethics as it actually happens.
+      </p>
+    </div>
+  </section>
+
+  <!-- How -->
+  <section class="max-w-3xl mx-auto px-6 py-10">
+    <ol class="space-y-3.5 text-[15px] text-zinc-700 dark:text-zinc-200">
+      <li class="flex gap-3"><span class="serif-italic text-zinc-400 tabular-nums">1</span><span><strong>Search</strong> X, LinkedIn, and Bluesky — keyword and hashtag search. On X, Grok helps surface and summarise threads.</span></li>
+      <li class="flex gap-3"><span class="serif-italic text-zinc-400 tabular-nums">2</span><span><strong>Follow your stakeholders.</strong> Once you do, the platform's recommender starts feeding you related posts — let it do the legwork week to week.</span></li>
+      <li class="flex gap-3"><span class="serif-italic text-zinc-400 tabular-nums">3</span><span><strong>Bookmark</strong> anything interesting as you spot it through the week.</span></li>
+      <li class="flex gap-3"><span class="serif-italic text-zinc-400 tabular-nums">4</span><span><strong>Pick the standouts</strong> — at least two posts where people are discussing your corpus, the most interesting or important of the week.</span></li>
+      <li class="flex gap-3"><span class="serif-italic text-zinc-400 tabular-nums">5</span><span><strong>Map them to the themes.</strong> What do the posts let you read through the toolkit? See the examples below.</span></li>
+      <li class="flex gap-3"><span class="serif-italic text-zinc-400 tabular-nums">6</span><span><strong>Keep it tight</strong> — you have three to five minutes.</span></li>
+    </ol>
+  </section>
+
+  <!-- Examples -->
+  <section class="max-w-3xl mx-auto px-6 pb-16">
+    <div class="flex items-baseline justify-between border-t hairline pt-8">
+      <h2 class="serif text-2xl">A few readings.</h2>
+      <span class="text-xs text-zinc-400">click to expand</span>
+    </div>
+    <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+      Examples, not a template. Read the post first; then see what someone pulled out of it.
+    </p>
+
+    <div id="examples" class="mt-6 space-y-3"></div>
+  </section>
+
+  <footer class="max-w-3xl mx-auto px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400 border-t hairline">
+    <a href="index.html" class="serif italic text-base text-zinc-700 dark:text-zinc-300 hover:underline decoration-dotted underline-offset-2">AI Ethics</a> — Universität Konstanz, WS 2026/27.
+  </footer>
+
+  <script>
+    const EXAMPLES = [
+      {
+        accent: "sky", tag: "Beyond Big Tech",
+        author: "@AnnexOps",
+        url: "https://x.com/AnnexOps/status/2066794989275988282",
+        img: "posts/beyond-big-tech.png",
+        quote: "startups, SaaS providers, and enterprise vendors may all need compliance",
+        reading: "The point is reach: the EU AI Act isn't just a Big-Tech problem — it lands on startups, SaaS providers, and ordinary vendors, most of whom don't realise they're covered. Through <strong>pluralism &amp; politics</strong>: a single rulebook stretched across a hugely uneven field, from frontier labs to two-person startups. That raises the real question — can one framework actually fit actors with such different capacity? — but the post itself is mostly a wake-up call about who the rules touch."
+      },
+      {
+        accent: "teal", tag: "Competitiveness vs. regulation",
+        author: "@helenvhodl",
+        url: "https://x.com/helenvhodl/status/2066091541429420107",
+        img: "posts/competitiveness.png",
+        quote: "productivity growth through AI is the only realistic path to a soft landing",
+        reading: "Reads the Act as a competitiveness problem, not a safety one. Through <strong>fairness</strong>: formally equal rules, unequal costs. Through <strong>long-termism</strong> and <strong>consequentialism</strong>: judge regulation by future outcomes — slowing AI now risks bigger harm later. The framing itself is the move worth flagging."
+      }
+    ];
+
+    const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, ch =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+
+    document.getElementById("examples").innerHTML = EXAMPLES.map(e => `
+      <details class="accent-${e.accent} group rounded-xl bg-white dark:bg-zinc-900 border hairline overflow-hidden">
+        <summary class="cursor-pointer select-none p-4 md:p-5 flex items-center gap-3 hover:bg-zinc-50 dark:hover:bg-zinc-800/40">
+          <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--accent);"></span>
+          <span class="flex-1 min-w-0">
+            <span class="font-medium">${esc(e.tag)}</span>
+            <span class="block text-sm text-zinc-500 truncate">“${esc(e.quote)}”</span>
+          </span>
+          <span class="text-zinc-300 dark:text-zinc-600 group-open:rotate-90 transition flex-shrink-0">›</span>
+        </summary>
+        <div class="px-4 md:px-5 pb-5">
+          <a href="${esc(e.url)}" target="_blank" rel="noopener" class="block max-w-[22rem]">
+            <img src="${esc(e.img)}" alt="Post by ${esc(e.author)}" loading="lazy"
+                 class="w-full rounded-xl border hairline shadow-sm" />
+          </a>
+          <p class="mt-4 text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-200">${e.reading}</p>
+          <a href="${esc(e.url)}" target="_blank" rel="noopener" class="inline-block mt-3 text-xs text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200">${esc(e.author)} · view on X →</a>
+        </div>
+      </details>
+    `).join("");
+  </script>
+</body>
+</html>

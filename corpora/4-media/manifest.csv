@@ -1,0 +1,12 @@
+id,corpus,stratum,type,source,title,year,url,accessible,inclusion_reason,notes
+economist,4-media,Global press,outlet,The Economist,The Economist — Artificial intelligence,,https://www.economist.com/topics/artificial-intelligence,true,"Global agenda-setting quality press; AI/tech coverage.",Students collect AI-alignment articles from this outlet.
+nyt,4-media,Global press,outlet,The New York Times,The New York Times — Artificial Intelligence,,https://www.nytimes.com/topic/subject/artificial-intelligence,true,"US paper of record; AI coverage.",
+guardian,4-media,Global press,outlet,The Guardian,The Guardian — Artificial intelligence (AI),,https://www.theguardian.com/technology/artificialintelligenceai,true,"Widely-read, openly accessible AI coverage.",
+ft,4-media,Global press,outlet,Financial Times,Financial Times — Artificial intelligence,,https://www.ft.com/artificial-intelligence,true,"Business/industry framing of AI.",
+wired,4-media,Global press,outlet,WIRED,WIRED — Artificial Intelligence,,https://www.wired.com/tag/artificial-intelligence/,true,"Tech-culture framing; close to the developer community.",
+techreview,4-media,Global press,outlet,MIT Technology Review,MIT Technology Review — Artificial intelligence,,https://www.technologyreview.com/topic/artificial-intelligence/,true,"Technically literate science-press framing.",
+zeit,4-media,German press,outlet,Die Zeit,Die Zeit — Künstliche Intelligenz,,https://www.zeit.de/thema/kuenstliche-intelligenz,true,"German quality weekly; local-context framing for Konstanz.",
+faz,4-media,German press,outlet,Frankfurter Allgemeine Zeitung,FAZ — Künstliche Intelligenz,,https://www.faz.net/aktuell/wirtschaft/kuenstliche-intelligenz/,true,"German paper of record.",
+sz,4-media,German press,outlet,Süddeutsche Zeitung,Süddeutsche Zeitung — Künstliche Intelligenz,,https://www.sueddeutsche.de/thema/K%C3%BCnstliche_Intelligenz,true,"Major German daily.",
+spiegel,4-media,German press,outlet,Der Spiegel,Der Spiegel — Künstliche Intelligenz,,https://www.spiegel.de/thema/kuenstliche_intelligenz/,true,"Leading German news magazine.",
+tagesschau,4-media,German press,outlet,Tagesschau (ARD),Tagesschau — Künstliche Intelligenz,,https://www.tagesschau.de/thema/k%C3%BCnstliche-intelligenz,true,"German public-broadcast news; mainstream framing.",

@@ -1,0 +1,2 @@
+id,corpus,stratum,type,source,title,year,url,accessible,inclusion_reason,notes
+example-doc-2024,1-cs,fairness,paper,FAccT,Example title goes here,2024,https://doi.org/10.0000/example,true,"why this document is in scope",dedup/substitution notes

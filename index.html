@@ -105,8 +105,6 @@
         AI Ethics<span class="serif-italic text-zinc-500 dark:text-zinc-400">.</span>
       </h1>
 
-      <p id="course-blurb" class="mt-6 max-w-2xl text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed"></p>
-
       <div class="mt-8 flex flex-wrap gap-2 text-xs">
         <span id="chip-format"   class="px-3 py-1.5 rounded-full bg-white/70 dark:bg-zinc-900/70 border hairline"></span>
         <span id="chip-language" class="px-3 py-1.5 rounded-full bg-white/70 dark:bg-zinc-900/70 border hairline"></span>
@@ -123,7 +121,7 @@
   <!-- Toolkit -->
   <section id="toolkit" class="max-w-6xl mx-auto px-6 py-8 scroll-mt-20">
     <div class="mb-8">
-      <h2 class="serif text-4xl mt-2">Eight themes.</h2>
+      <h2 class="serif text-4xl mt-2">Six lenses.</h2>
       <p class="mt-2 max-w-2xl text-zinc-600 dark:text-zinc-300">
         Each row pairs a normative question with the technical artefacts that implicitly answer it.
       </p>
@@ -158,17 +156,19 @@
       </p>
     </div>
 
-    <div id="weekly-rhythm" class="mb-6"></div>
     <div id="schedule-blocks"></div>
   </section>
 
   <!-- Group projects -->
   <section id="projects" class="max-w-6xl mx-auto px-6 py-12 scroll-mt-20">
     <div class="mb-6">
-      <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Five corpora · five groups</div>
+      <div class="text-xs uppercase tracking-[0.18em] text-zinc-500">Four stakeholders · four groups</div>
       <h2 class="serif text-4xl mt-2">Group projects.</h2>
       <p class="mt-3 max-w-3xl text-zinc-600 dark:text-zinc-300">
-        Each group adopts one corpus at the start of the term and works on it continuously — expanding it week by week, applying each new concept from the toolkit, and reporting back in regular group presentations.
+        Each group adopts one corpus at the start of the term and works on it continuously.
+      </p>
+      <p class="mt-2 max-w-3xl text-zinc-600 dark:text-zinc-300">
+        Each group also tracks its stakeholders' <strong>weekly posts on X / LinkedIn</strong> — the live pulse of that group's current discourse alongside the slower documentary record. Each week every group brings the standout posts where people are discussing its corpus and maps them onto the themes — a few tight minutes in class. See the <a href="observatory.html" class="underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-100">Social Media Observatory — how it works &amp; examples →</a>
       </p>
     </div>
 
@@ -209,80 +209,70 @@
       course: {
         title: "AI Ethics",
         subtitle: "The Philosophical Toolkit",
-        blurb: "Grounded in philosophical foundations: we work through eight themes — from metaethics to long-termism — and in parallel examine how each is currently being translated into the technical practice of AI.",
         prerequisites: "An interest in growing your skills — both analytical and technical — and an openness to using AI coding agents. No prior programming experience required.",
-        goal: "By term's end the class collectively writes one paper, with every student listed as a co-author. The five corpora become five complementary case studies; the eight themes provide the shared analytical lens. We aim to submit to FAccT, AIES, or AI & Society.",
+        goal: "By term's end the class collectively writes one paper, with every student listed as a co-author. The four corpora become four complementary case studies; the six lenses provide the shared analytical frame. We aim to submit to FAccT, AIES, or AI & Society.",
         semester: "Wintersemester 2026 / 27",
         university: "Universität Konstanz",
         language: "English (readings in English)",
         format: "Weekly · Wednesdays",
         firstClass: "2026-10-21",
         lastClass: "2027-02-03",
-        weeklyRhythm: [
-          { n: "01", label: "Philosophical foundations",    note: "Reading and discussion of the week's normative question." },
-          { n: "02", label: "Technical operationalizations", note: "How current AI systems implicitly answer the question." },
-          { n: "03", label: "Group presentation",           note: "One group connects the week's concepts to their evolving corpus." }
-        ],
         instructors: [
           { name: "Carina Hausladen", affiliation: "Co-instructor — sociotechnical / computational track", focus: "Technical operationalization of normative concepts; discourse analysis of alignment debates." },
           { name: "Tobias Henschen",  affiliation: "Philosophie, Universität Konstanz",                    focus: "Moral philosophy, metaethics, normative theory; analytical training in ethical reasoning." }
         ]
       },
       units: [
-        { id: "metaethics",  number: 1, title: "Metaethics",                     accent: "indigo",
-          question: "Does value alignment presuppose that there are objective values, or does it just require coherence with human preferences?",
-          tech: "RLHF, constitutional AI, reward modeling, and preference learning can be read as different implicit answers to this question." },
-        { id: "preference",  number: 2, title: "Preference & Welfare",           accent: "amber",
+        { id: "metaethics",  number: 1, title: "Metaethics & moral uncertainty", accent: "indigo",
+          question: "Does alignment presuppose objective values or just coherence with preferences — and how should systems reason when they don't know which ethics is right?",
+          tech: "RLHF, constitutional AI, and reward modeling alongside ensemble objectives, uncertainty-aware systems, and debate architectures — read as implicit answers to the status and knowability of values." },
+        { id: "preference",  number: 2, title: "Preference & welfare",           accent: "amber",
           question: "Should AI systems track what people say they want, what they do, or what would objectively be good for them?",
           tech: "Recommendation systems, preference optimization, and behavioral inference — evaluated for whether they track welfare, revealed preferences, or mere engagement." },
-        { id: "character",   number: 3, title: "Character & Virtue",             accent: "rose",
+        { id: "character",   number: 3, title: "Character & virtue",             accent: "rose",
           question: "Should we specify rules and utility functions, or cultivate something like a good character?",
           tech: "Agent architectures, self-critique systems, and corrigibility research — as attempts to operationalize reliability, honesty, practical wisdom." },
-        { id: "fairness",    number: 4, title: "Fairness",                       accent: "emerald",
-          question: "Is it possible to develop AI that is fair or socially unbiased? What is fairness?",
-          tech: "Fairness metrics and bias mitigation methods, alongside their known incompatibilities and societal consequences." },
-        { id: "pluralism",   number: 5, title: "Pluralism & Politics",           accent: "sky",
-          question: "Human values differ across individuals, cultures, and generations. Whose values should be tracked?",
-          tech: "Aggregation methods, participatory alignment, and governance frameworks — read for inclusion, representation, power asymmetries." },
-        { id: "agency",      number: 6, title: "Agency & Autonomy",              accent: "violet",
+        { id: "fairness",    number: 4, title: "Fairness & pluralism",           accent: "emerald",
+          question: "Can AI be fair or socially unbiased — and whose values count when they differ across individuals, cultures, and generations?",
+          tech: "Fairness metrics and bias mitigation alongside aggregation methods, participatory alignment, and governance — read for incompatibilities, inclusion, and power asymmetries." },
+        { id: "agency",      number: 5, title: "Agency & autonomy",              accent: "violet",
           question: "Can AI systems be moral agents, or only sophisticated tools? Corrigible or autonomous?",
           tech: "Human oversight architectures, agentic systems, delegation frameworks — assessed for responsibility and control." },
-        { id: "uncertainty", number: 7, title: "Moral Uncertainty",              accent: "fuchsia",
-          question: "How should AI systems reason when they don't know which ethical theory is correct?",
-          tech: "Ensemble objectives, uncertainty-aware systems, and debate architectures as partial responses to unresolved normative conflict." },
-        { id: "longtermism", number: 8, title: "Long-termism & Existential Risk", accent: "teal",
+        { id: "longtermism", number: 6, title: "Long-termism & existential risk", accent: "teal",
           question: "What obligations do we have to future generations, and how should they shape alignment today?",
           tech: "AI safety techniques, robustness evaluations, catastrophic risk modeling — read for their assumptions about future value and risk." }
       ],
+      corpusRepo: "https://github.com/carinahausladen/konstanz-ethics-2027/tree/main/corpora",
       corpora: [
-        { id: "cs",      number: 1, name: "Computer science / technical research",
-          sources: ["OpenAlex", "Semantic Scholar", "arXiv", "ACL Anthology", "NeurIPS / ICML / ICLR proceedings", "FAccT proceedings"] },
-        { id: "company", number: 2, name: "AI safety / company governance",
-          sources: ["OpenAI", "Anthropic", "DeepMind", "Meta AI", "Safety frameworks", "Model & system cards", "Technical blogs"] },
-        { id: "policy",  number: 3, name: "Policy / institutional",
-          sources: ["EU AI Act material", "OECD", "UNESCO", "NIST AI RMF", "National AI strategies", "Parliamentary hearings"] },
-        { id: "media",   number: 4, name: "Newspaper / public discourse",
-          sources: ["GDELT", "MediaCloud", "LexisNexis / Factiva (via university access)", "Newspaper RSS / search pages"] },
-        { id: "social",  number: 5, name: "Social / professional discourse",
-          sources: ["LinkedIn (manual sampling)", "X (API / approved datasets only)", "Reddit API", "Bluesky / Mastodon APIs"] }
+        { id: "cs",      number: 1, name: "Research", path: "1-cs",
+          labelField: "stratum", labelHeader: "Discipline" },
+        { id: "company", number: 2, name: "Companies", path: "2-company",
+          labelField: "company", labelHeader: "Company" },
+        { id: "policy",  number: 3, name: "Government", path: "3-policy",
+          labelField: "source", labelHeader: "Institution" },
+        { id: "media",   number: 4, name: "Public discourse", path: "4-media",
+          labelField: "stratum", labelHeader: "Press" }
       ],
       schedule: [
         { week: 1,  date: "2026-10-21", unitId: null,          title: "Introduction",              note: "Alignment as an implicitly normative project; overview of corpora and methods." },
         { week: 2,  date: "2026-10-28", unitId: null,          title: "Corpus kickoff",            note: "Teams form, adopt corpora, receive baseline datasets, and begin extending them." },
-        { week: 3,  date: "2026-11-04", unitId: "metaethics",  title: "Metaethics",                note: "Are values objective, constructed, or preference-based?" },
+        { week: 3,  date: "2026-11-04", unitId: "metaethics",  title: "Metaethics & moral uncertainty", note: "Are values objective, constructed, or preference-based — and how to reason when the answer is unsettled?" },
         { week: 4,  date: "2026-11-11", unitId: "preference",  title: "Preference & welfare",      note: "Revealed vs. stated vs. ideal preferences — read into the corpus." },
         { week: 5,  date: "2026-11-18", unitId: "character",   title: "Character & virtue",        note: "Rule-following vs. cultivated judgment." },
-        { week: 6,  date: "2026-11-25", unitId: "fairness",    title: "Fairness",                  note: "Metric incompatibilities; distributive theory." },
-        { week: 7,  date: "2026-12-02", unitId: "pluralism",   title: "Pluralism & politics",      note: "Whose values? Aggregation and power." },
-        { week: 8,  date: "2026-12-09", unitId: "agency",      title: "Agency & autonomy",         note: "Corrigibility, oversight, delegation." },
-        { week: 9,  date: "2026-12-16", unitId: "uncertainty", title: "Moral uncertainty",         note: "Reasoning under unresolved normative conflict." },
-        { week: 10, date: "2027-01-13", unitId: "longtermism", title: "Long-termism & x-risk",     note: "Future generations and present alignment." },
-        { week: 11, date: "2027-01-20", unitId: null,          title: "Cross-corpus comparison",   note: "What is each corpus revealing? Critical perspectives and alternative framings." },
-        { week: 12, date: "2027-01-27", unitId: null,          title: "Final group presentations", note: "Each group presents its corpus and findings in depth." },
-        { week: 13, date: "2027-02-03", unitId: null,          title: "Synthesis & wrap-up",       note: "Putting it all together — toward the co-authored paper." }
+        { week: 6,  date: "2026-11-25", unitId: "fairness",    title: "Fairness & pluralism",      note: "Metric incompatibilities; whose values, aggregation, and power." },
+        { week: 7,  date: "2026-12-02", unitId: "agency",      title: "Agency & autonomy",         note: "Corrigibility, oversight, delegation." },
+        { week: 8,  date: "2026-12-09", unitId: "longtermism", title: "Long-termism & existential risk", note: "Future generations and present alignment — lenses complete." },
+        { week: 9,  date: "2026-12-16", unitId: null,          title: "Preliminary results",       note: "Each group presents first findings across the six lenses before the break." },
+        { week: 10, date: "2027-01-13", unitId: null,          title: "Hackathon · feedback",      note: "In-class working session — walk through results together, troubleshoot, refine." },
+        { week: 11, date: "2027-01-20", unitId: null,          title: "Final group results",       note: "Each group presents its completed corpus analysis." },
+        { week: 12, date: "2027-01-27", unitId: null,          title: "Paper hackathon",           note: "Class splits across groups to draft the paper's subsections." },
+        { week: 13, date: "2027-02-03", unitId: null,          title: "Paper hackathon",           note: "Continue drafting and assemble the co-authored paper." }
       ]
     };
   </script>
+
+  <!-- Per-corpus seed contents (auto-generated by corpora/build_site_data.py) -->
+  <script src="corpora-data.js"></script>
 
   <script>
     const D = window.COURSE_DATA;
@@ -290,7 +280,6 @@
     const fmtFull  = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 
     // Hero
-    document.getElementById("course-blurb").textContent = D.course.blurb;
     document.getElementById("chip-format").textContent = D.course.format;
     document.getElementById("chip-language").textContent = D.course.language;
     document.getElementById("chip-window").textContent = `${fmtFull(D.course.firstClass)} → ${fmtFull(D.course.lastClass)}`;
@@ -332,22 +321,6 @@
       </tr>
     `).join("");
 
-    // Weekly rhythm panel
-    document.getElementById("weekly-rhythm").innerHTML = `
-      <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline p-6 md:p-8">
-        <div class="text-xs uppercase tracking-[0.18em] text-zinc-500 mb-5">Each week · W2 → W13</div>
-        <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-          ${D.course.weeklyRhythm.map(r => `
-            <div>
-              <div class="serif-italic text-2xl tabular-nums text-zinc-400 dark:text-zinc-500 leading-none">${r.n}</div>
-              <div class="font-medium text-base mt-2">${r.label}</div>
-              <div class="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">${r.note}</div>
-            </div>
-          `).join("")}
-        </div>
-      </div>
-    `;
-
     // Schedule — single continuous timeline; Christmas break inline after W9
     const renderRow = (s) => {
       const u = D.units.find(x => x.id === s.unitId);
@@ -373,16 +346,74 @@
       </div>
     `;
 
-    // Corpora
-    document.getElementById("corpus-list").innerHTML = D.corpora.map(c => `
-      <li>
-        <div class="flex items-baseline gap-3">
-          <span class="serif-italic text-2xl tabular-nums text-zinc-400 dark:text-zinc-500 w-8 leading-none">${String(c.number).padStart(2, "0")}</span>
-          <span class="font-medium text-lg">${c.name}</span>
-        </div>
-        <div class="ml-11 mt-1 text-sm text-zinc-600 dark:text-zinc-300">${c.sources.join(", ")}</div>
-      </li>
-    `).join("");
+    // Corpora — each row expands to a table of what's actually in the seed.
+    const ROWS = window.CORPORA_ROWS || {};
+    const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, ch =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+
+    // The left-hand label differs per corpus (discipline / company / institution / press).
+    const PRETTY = { openai: "OpenAI", anthropic: "Anthropic", deepmind: "DeepMind", meta: "Meta", microsoft: "Microsoft" };
+    const labelOf = (c, r) => {
+      const v = (r[c.labelField] || "").trim();
+      return PRETTY[v.toLowerCase()] || v;
+    };
+    const sweptList = (c, rows) => {
+      const seen = [], set = new Set();
+      rows.forEach(r => { const v = labelOf(c, r); if (v && !set.has(v)) { set.add(v); seen.push(v); } });
+      return seen.map(esc).join(" · ");
+    };
+
+    function contentsTable(c, rows) {
+      if (!rows || !rows.length) return "";
+      const hasYear = rows.some(r => (r.year || "").trim());
+      const body = rows.map((r, i) => {
+        const title = r.url
+          ? `<a href="${esc(r.url)}" target="_blank" rel="noopener" class="hover:underline decoration-dotted underline-offset-2">${esc(r.title)}</a>`
+          : esc(r.title);
+        const gated = String(r.accessible).toLowerCase() === "false"
+          ? ` <span class="text-amber-600 dark:text-amber-400" title="gated — metadata only">⚠</span>` : "";
+        return `<tr class="border-t hairline align-top">
+          <td class="py-1.5 pr-3 text-zinc-400 tabular-nums">${i + 1}</td>
+          <td class="py-1.5 pr-3 whitespace-nowrap text-zinc-500">${esc(labelOf(c, r))}</td>
+          <td class="py-1.5 pr-3">${title}${gated}</td>
+          ${hasYear ? `<td class="py-1.5 text-zinc-400 tabular-nums">${esc(r.year)}</td>` : ""}
+        </tr>`;
+      }).join("");
+      return `<div class="mt-3 max-h-96 overflow-auto rounded-lg border hairline">
+        <table class="w-full text-xs">
+          <thead class="sticky top-0 bg-zinc-50 dark:bg-zinc-800 text-left text-zinc-500">
+            <tr>
+              <th class="py-1.5 pl-3 pr-3 font-medium">#</th>
+              <th class="py-1.5 pr-3 font-medium">${esc(c.labelHeader)}</th>
+              <th class="py-1.5 pr-3 font-medium">Title</th>
+              ${hasYear ? `<th class="py-1.5 font-medium">Year</th>` : ""}
+            </tr>
+          </thead>
+          <tbody class="pl-3">${body}</tbody>
+        </table>
+      </div>`;
+    }
+
+    document.getElementById("corpus-list").innerHTML = D.corpora.map(c => {
+      const rows = ROWS[c.path] || [];
+      return `
+      <li class="rounded-xl border hairline bg-white dark:bg-zinc-900 overflow-hidden">
+        <details>
+          <summary class="cursor-pointer list-none select-none p-4 md:p-5 flex items-baseline gap-3 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+            <span class="serif-italic text-2xl tabular-nums text-zinc-400 dark:text-zinc-500 w-8 leading-none">${String(c.number).padStart(2, "0")}</span>
+            <span class="flex-1 font-medium text-lg">${esc(c.name)}</span>
+            <span class="text-xs text-zinc-400 whitespace-nowrap mt-1">view contents ▾</span>
+          </summary>
+          <div class="px-4 md:px-5 pb-5 ml-11">
+            <div class="text-xs text-zinc-500 dark:text-zinc-400">${sweptList(c, rows)}</div>
+            ${contentsTable(c, rows)}
+            <div class="mt-3 text-xs">
+              <a href="${D.corpusRepo}/${c.path}" class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 underline decoration-dotted underline-offset-2">full manifest &amp; README →</a>
+            </div>
+          </div>
+        </details>
+      </li>`;
+    }).join("");
 
     // Prerequisites & Goal
     document.getElementById("prereq-text").textContent = D.course.prerequisites;
