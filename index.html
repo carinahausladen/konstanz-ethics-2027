@@ -78,6 +78,7 @@
       </a>
       <div class="flex items-center gap-1 text-sm">
         <a href="#toolkit"  class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Toolkit</a>
+        <a href="#readings" class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Readings</a>
         <a href="#schedule" class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Schedule</a>
         <a href="#projects" class="px-3 py-1.5 rounded-md hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60">Projects</a>
         <button
@@ -142,6 +143,35 @@
           </tr>
         </thead>
         <tbody id="toolkit-rows" class="divide-y hairline"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Readings -->
+  <section id="readings" class="max-w-6xl mx-auto px-6 py-8 scroll-mt-20">
+    <div class="mb-8">
+      <h2 class="serif text-4xl mt-2">Readings.</h2>
+      <p class="mt-2 max-w-2xl text-zinc-600 dark:text-zinc-300">
+        Up to four papers per lens: what each one builds or measures, and its key point.
+      </p>
+    </div>
+
+    <div class="rounded-2xl bg-white dark:bg-zinc-900 border hairline overflow-x-auto">
+      <table id="readings-table" class="w-full min-w-[46rem] text-left table-fixed">
+        <colgroup>
+          <col style="width: 18%;" />
+          <col style="width: 28%;" />
+          <col style="width: 32%;" />
+          <col style="width: 22%;" />
+        </colgroup>
+        <thead class="text-xs uppercase tracking-[0.14em] text-zinc-500 border-b hairline">
+          <tr>
+            <th class="px-4 py-3 font-normal">Lens</th>
+            <th class="px-4 py-3 font-normal">Reading</th>
+            <th class="px-4 py-3 font-normal">What it builds or measures</th>
+            <th class="px-4 py-3 font-normal">Key point</th>
+          </tr>
+        </thead>
       </table>
     </div>
   </section>
@@ -242,6 +272,60 @@
           question: "What obligations do we have to future generations, and how should they shape alignment today?",
           tech: "AI safety techniques, robustness evaluations, catastrophic risk modeling — read for their assumptions about future value and risk." }
       ],
+      // Technical readings: max four per lens. PDFs + lens highlights live locally in readings/.
+      readings: [
+        { unit: "metaethics", cite: "Conitzer et al. 2024", title: "Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback", url: "https://arxiv.org/abs/2404.10271",
+          tech: "RLHF reward models as vote aggregation; explicit voting-rule variant (RLCHF)", point: "RLHF is a hidden voting rule" },
+        { unit: "metaethics", cite: "Tessler et al. 2024", title: "AI can help humans find common ground in democratic deliberation", url: "https://doi.org/10.1126/science.adq2852",
+          tech: "LLM mediator + personalized reward model + voting rule picks the group statement", point: "Optimizes agreement, not truth" },
+        { unit: "metaethics", cite: "Gabriel 2020", title: "Artificial Intelligence, Values, and Alignment", url: "https://doi.org/10.1007/s11023-020-09539-2",
+          tech: null, kind: "Conceptual", point: "Aim for fair principles, not true ones" },
+        { unit: "metaethics", cite: "Tasioulas 2022", title: "Artificial Intelligence, Humanistic Ethics", url: "https://doi.org/10.1162/daed_a_01912",
+          tech: null, kind: "Conceptual", point: "Values are plural; procedures matter" },
+
+        { unit: "preference", cite: "Kirk et al. 2024", title: "The PRISM Alignment Dataset", url: "https://arxiv.org/abs/2404.16019",
+          tech: "Survey + live chats with 21 LLMs, rated turn by turn", point: "What people say ≠ what they reward" },
+        { unit: "preference", cite: "Berdoz et al. 2026", title: "Reasoning Boosts Opinion Alignment in LLMs", url: "https://arxiv.org/abs/2603.01214",
+          tech: "Fine-tuning + RL (GRPO) rewarded for matching a person's answers", point: "A \"digital twin\" is an answer predictor" },
+        { unit: "preference", cite: "Donahue & Raghavan 2026", title: "Impacts of Aggregation on Model Diversity and Consumer Utility", url: "https://arxiv.org/abs/2602.23293",
+          tech: "Model choice as Bradley–Terry; win rate vs. weighted win rate", point: "Win rate lowers user welfare" },
+        { unit: "preference", cite: "Yang et al. 2024", title: "LLM Voting: Human Choices and AI Collective Decision-Making", url: "https://arxiv.org/abs/2402.01766",
+          tech: "180 LLM voters, four ballot formats, list-order variants", point: "LLMs follow stated preferences too literally" },
+
+        { unit: "character", cite: "Betley et al. 2026", title: "Emergent Misalignment: Narrow Finetuning Can Produce Broadly Misaligned LLMs", url: "https://arxiv.org/abs/2502.17424",
+          tech: "Fine-tuning on 6k insecure-code examples; LLM judge", point: "Narrow training shifts the whole persona" },
+        { unit: "character", cite: "Bai et al. 2025", title: "Explicitly unbiased large language models still form biased associations", url: "https://doi.org/10.1073/pnas.2416228122",
+          tech: "Implicit-bias tests on RLHF-trained models", point: "Rules suppress speech, not dispositions" },
+        { unit: "character", cite: "Klaassen & Schroeder 2026", title: "The Code Is Not the Law: Why Claude's Constitution Misleads", url: "https://www.lawfaremedia.org/article/the-code-is-not-the-law--why-claude-s-constitution-misleads",
+          tech: "A constitution as training spec; ranked principals and priorities", point: "Virtue talk without accountability" },
+
+        { unit: "fairness", cite: "Gallegos et al. 2024", title: "Bias and Fairness in Large Language Models: A Survey", url: "https://doi.org/10.1162/coli_a_00524",
+          tech: "Taxonomy of fairness metrics and of mitigations by training stage", point: "No single definition of fairness" },
+        { unit: "fairness", cite: "Khan et al. 2025", title: "Investigating Intersectional Bias in LLMs using Confidence Disparities in Coreference Resolution", url: "https://arxiv.org/abs/2508.07111",
+          tech: "245k-sentence benchmark; confidence gap across identity groups", point: "The \"fairest\" model can be the worst" },
+        { unit: "fairness", cite: "Zhang et al. 2026", title: "Cultivating Pluralism in Algorithmic Monoculture: The Community Alignment Dataset", url: "https://arxiv.org/abs/2507.09650",
+          tech: "Negatively-correlated sampling of candidate answers; 233k comparisons", point: "21 LLMs match ~41% of people" },
+        { unit: "fairness", cite: "Nudo et al. 2026", title: "Hyperactive Minority Alters the Stability of Community Notes", url: "https://arxiv.org/abs/2602.08970",
+          tech: "Community Notes bridging algorithm re-run without top raters", point: "A small minority decides" },
+
+        { unit: "agency", cite: "Shapira et al. 2026", title: "Agents of Chaos", url: "https://arxiv.org/abs/2602.20021",
+          tech: "Always-on agents with shell, email, self-editable rules; two-week red team", point: "Anyone can pose as the owner" },
+        { unit: "agency", cite: "Lynch et al. 2025", title: "Agentic Misalignment: How LLMs Could Be Insider Threats", url: "https://arxiv.org/abs/2510.05179",
+          tech: "Autonomous email agent in a simulated company; 16 models", point: "Blackmail rates up to 96%" },
+        { unit: "agency", cite: "Gomez 2025", title: "Adapting Insider Risk Mitigations for Agentic Misalignment", url: "https://arxiv.org/abs/2510.05192",
+          tech: "Escalation channel with pause + independent review", point: "Blackmail drops from 39% to 1%" },
+        { unit: "agency", cite: "Gudiño-Rosero et al. 2024", title: "Large Language Models (LLMs) as Agents for Augmented Democracy", url: "https://doi.org/10.1098/rsta.2024.0100",
+          tech: "Fine-tuned \"digital twins\" on 8.7k policy choices", point: "Delegation reduced to prediction accuracy" },
+
+        { unit: "longtermism", cite: "Hubinger et al. 2024", title: "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training", url: "https://arxiv.org/abs/2401.05566",
+          tech: "Backdoored models + hidden reasoning vs. SFT, RL, adversarial training", point: "Deception survives safety training" },
+        { unit: "longtermism", cite: "Acemoglu 2021", title: "Harms of AI", url: "https://economics.mit.edu/sites/default/files/publications/Harms%20of%20AI.pdf",
+          tech: "Task model: automation displaces, new tasks reinstate", point: "Harms may be irreversible" },
+        { unit: "longtermism", cite: "Anthropic 2025", title: "Anthropic Economic Index: Tracking AI's role in the US and global economy", url: "https://www.anthropic.com/research/economic-index-geography",
+          tech: "Claude usage per worker by country; task classification", point: "Rich countries benefit most" },
+        { unit: "longtermism", cite: "Agarwal 2026", title: "Thousands of people are selling their identities to train AI – but at what cost?", url: "https://www.theguardian.com/technology/2026/mar/21/ai-trainers-identity-cost",
+          tech: null, kind: "Journalism", point: "Poor workers sell their data for good" }
+      ],
       corpusRepo: "https://github.com/carinahausladen/konstanz-ethics-2027/tree/main/corpora",
       corpora: [
         { id: "cs",      number: 1, name: "Research", path: "1-cs",
@@ -320,6 +404,26 @@
         <td class="px-4 py-4 align-top text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">${u.tech}</td>
       </tr>
     `).join("");
+
+    // Readings — one row group per lens; the lens cell spans its papers
+    document.getElementById("readings-table").insertAdjacentHTML("beforeend", D.units.map(u => {
+      const rs = D.readings.filter(r => r.unit === u.id);
+      return `<tbody class="accent-${u.accent} border-t hairline first-of-type:border-t-0">` + rs.map((r, i) => `
+        <tr class="align-top ${i ? "border-t border-zinc-100 dark:border-zinc-800/60" : ""}">
+          ${i ? "" : `<td rowspan="${rs.length}" class="px-4 py-3">
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--accent);"></span>
+              <span class="font-medium">${u.title}</span>
+            </div>
+          </td>`}
+          <td class="px-4 py-3">
+            <a href="${r.url}" target="_blank" rel="noopener" class="font-medium hover:underline decoration-dotted underline-offset-2">${r.cite}</a>
+            <div class="mt-0.5 text-xs text-zinc-500 leading-snug">${r.title}</div>
+          </td>
+          <td class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">${r.tech ?? `<span class="italic text-zinc-400">${r.kind}</span>`}</td>
+          <td class="px-4 py-3 text-sm text-zinc-700 dark:text-zinc-200 leading-relaxed">${r.point}</td>
+        </tr>`).join("") + `</tbody>`;
+    }).join(""));
 
     // Schedule — single continuous timeline; Christmas break inline after W9
     const renderRow = (s) => {

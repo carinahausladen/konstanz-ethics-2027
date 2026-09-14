@@ -15,3 +15,7 @@ styles.css
 .idea/
 .DS_Store
 .claude/
+
+# Reading PDFs — copyrighted, local only (script + highlights.json are fine to commit)
+readings/**/*.pdf
+__pycache__/
