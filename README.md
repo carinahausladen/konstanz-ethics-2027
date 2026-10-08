@@ -2,8 +2,7 @@
 
 Universität Konstanz, winter semester 2026/27
 Wednesdays, Oct 21 – Feb 3 · Carina Hausladen & Tobias Henschen
-
-**[Open the course dashboard →](dashboard.html)**
+Course site: https://carinahausladen.github.io/konstanz-ethics-2027/
 
 Alignment is an implicitly normative project: every technique for making AI "good" takes a stance on what good means.
 In this seminar we read six philosophical lenses into four corpora of how researchers, companies, governments and the press talk about AI.
@@ -15,7 +14,6 @@ By the end of term the class writes one paper together, with every student as a 
 4. **Fairness & pluralism.** Can AI be fair, and whose values count when they differ?
 5. **Agency & autonomy.** Can AI systems be moral agents, or only tools? Corrigible or autonomous?
 6. **Long-termism & existential risk.** What do we owe future generations, and how should that shape alignment today?
-
 
 
 
@@ -36,8 +34,6 @@ By the end of term the class writes one paper together, with every student as a 
 | Jan 20 | Final group results |
 | Jan 27 | Paper hackathon I |
 | Feb 3 | Paper hackathon II |
-
-
 
 
 
