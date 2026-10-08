@@ -1,12 +1,11 @@
-# AI Ethics: The Philosophical Toolkit
+# AI Ethics
 
 Universität Konstanz, winter semester 2026/27
 Wednesdays, Oct 21 – Feb 3 · Carina Hausladen & Tobias Henschen
-Course site: https://carinahausladen.github.io/konstanz-ethics-2027/
+
 
 Alignment is an implicitly normative project: every technique for making AI "good" takes a stance on what good means.
 In this seminar we read six philosophical lenses into four corpora of how researchers, companies, governments and the press talk about AI.
-By the end of term the class writes one paper together, with every student as a co-author, aimed at FAccT, AIES or AI & Society.
 
 1. **Metaethics & moral uncertainty.** Does alignment presuppose objective values, and how should systems reason when they don't know which ethics is right?
 2. **Preference & welfare.** Should AI track what people say they want, what they do, or what is good for them?
@@ -45,8 +44,6 @@ Each group adopts one corpus in [`corpora/`](corpora/), extends it, and reads it
 2. **Companies** ([`2-company`](corpora/2-company/)): documents from OpenAI, Anthropic, DeepMind, Meta, Microsoft
 3. **Government** ([`3-policy`](corpora/3-policy/)): policy and regulatory texts
 4. **Public discourse** ([`4-media`](corpora/4-media/)): press coverage
-
-See [`corpora/PROTOCOL.md`](corpora/PROTOCOL.md) for how to add documents.
 
 
 
