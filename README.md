@@ -5,14 +5,25 @@ Wednesdays, Oct 21 – Feb 3 · Carina Hausladen & Tobias Henschen
 
 
 Alignment is an implicitly normative project: every technique for making AI "good" takes a stance on what good means.
-In this seminar we read six philosophical lenses into four corpora of how researchers, companies, governments and the press talk about AI.
 
-1. **Fairness & pluralism.** Can AI be fair, and whose values count when they differ?
-2. **Metaethics & moral uncertainty.** Does alignment presuppose objective values, and how should systems reason when they don't know which ethics is right?
-3. **Preference & welfare.** Should AI track what people say they want, what they do, or what is good for them?
-4. **Character & virtue.** Should we specify rules and utility functions, or cultivate something like good character?
-5. **Agency & autonomy.** Can AI systems be moral agents, or only tools? Corrigible or autonomous?
-6. **Long-termism & existential risk.** What do we owe future generations, and how should that shape alignment today?
+
+
+## Goal
+
+In this seminar we work through six debates in moral philosophy and the technical AI ethics concepts that go with each.
+We then use both in a new research area: auditing the alignment documents that AI companies publish, and testing whether their models behave as these documents say.
+Each group takes one document, reads it through the six lenses, and tests whether the models do what it says.
+
+
+
+## Philosophical Debates & Technical Concepts
+
+1. **Fairness & pluralism:** Fairness metrics, Impossibility result, Bias benchmarks, Measuring model opinions, Political bias, Pluralistic alignment
+2. **Metaethics & moral uncertainty:** Social choice, RLHF (and DPO), Reward model, Expected utility, Incommensurable values
+3. **Preference & welfare:** Engagement optimization, Reward hacking, Stated vs. revealed preferences, Sycophancy, Persuasion & manipulation, Companion AI
+4. **Character & virtue:** Character training & persona, Constitutional AI / Model spec, Emergent misalignment, Chain-of-thought faithfulness, Honesty & deception, Interpretability
+5. **Agency & autonomy:** AI agents, Agentic evaluation, Human oversight & AI control, Corrigibility, Model welfare & AI consciousness
+6. **Long-termism & existential risk:** Dangerous-capability evals, Scaling policy, Jailbreaks, Alignment faking, Deepfakes & the liar's dividend
 
 
 
@@ -28,11 +39,21 @@ In this seminar we read six philosophical lenses into four corpora of how resear
 | Nov 25 | 4. Character & virtue |
 | Dec 2 | 5. Agency & autonomy |
 | Dec 9 | 6. Long-termism & existential risk |
-| Dec 16 | Preliminary results |
-| Jan 13 | Hackathon: feedback |
-| Jan 20 | Final group results |
-| Jan 27 | Paper hackathon I |
-| Feb 3 | Paper hackathon II |
+| Dec 16 | Preliminary results presentation |
+| Jan 13 | Results & figures feedback |
+| Jan 20 | Writing feedback |
+| Jan 27 | Paper presentations I |
+| Feb 3 | Paper presentations II |
+
+
+
+## Activities
+
+- **Paper presentation (20%):** present one of the week's readings
+- **Social media observatory presentation (10%)**
+- **Preliminary results presentation (10%):** Dec 16
+- **Final paper (60%)**
+- **Weekly analysis (pass/fail, required to pass):** your corpus through the week's lens
 
 
 
@@ -55,14 +76,34 @@ Each group takes one document, reads it through all six lenses, and tests whethe
 
 ## Readings
 
-Technical concepts per lens and two papers per week; the remaining concepts are covered in the lecture.
+Philosophy readings first, then technical readings; topics without a reading are covered in the lecture.
 
-| Lens | Technical concept | Paper |
-|---|---|---|
-| **Basics (W1–W2)** | • Pretraining (base vs. chat model)<br>• Training data (memorization, consent, copyright)<br>• System prompt<br>• Benchmarks & evaluation validity<br>• LLM-as-a-judge<br>• Reading an experiment (randomized trials, effect sizes) |  |
-| **1. Fairness & pluralism** | • Fairness metrics (group, individual, counterfactual)<br>• Impossibility result<br>• Bias metrics & benchmarks (BBQ, WinoBias, BOLD)<br>• Measuring model opinions (answer distributions vs. surveys)<br>• Political bias<br>• Pluralistic alignment (incl. WEIRD bias) | Anthis 2025, Santurkar 2023 |
-| **2. Metaethics & moral uncertainty** | • Social choice (preference aggregation)<br>• RLHF (and DPO)<br>• Reward model<br>• Utility & expected utility<br>• Incommensurable values & moral uncertainty | Zhi-Xuan 2024, Conitzer 2024 |
-| **3. Preference & welfare** | • Engagement optimization<br>• Reward hacking / Goodhart<br>• Immediate vs. reflective preferences (stated, revealed)<br>• Sycophancy (incl. social sycophancy)<br>• Persuasion & manipulation<br>• Companion AI / emotional reliance | Cheng 2026, Costello 2024 |
-| **4. Character & virtue** | • Character training & persona<br>• Constitutional AI / Model spec<br>• Fine-tuning & emergent misalignment<br>• Chain of thought & faithfulness<br>• Honesty, deception & hallucination<br>• Interpretability | Betley 2026, Turpin 2023 |
-| **5. Agency & autonomy** | • AI agent<br>• Agentic evaluation (benchmark vs. trajectory)<br>• Human oversight / AI control / scalable oversight<br>• Corrigibility<br>• Model welfare & AI consciousness | Lynch 2025, Butlin 2025 |
-| **6. Long-termism & existential risk** | • Dangerous-capability evals<br>• Scaling policy<br>• Jailbreak<br>• Deceptive alignment / alignment faking<br>• Deepfakes, watermarking & the liar's dividend | Greenblatt 2024, Schiff 2024 |
+1. **Fairness & pluralism**
+   - A Theory of Justice (excerpt), Rawls 1971
+   - [The Idea of an Overlapping Consensus](https://doi.org/10.1093/ojls/7.1.1), Rawls 1987
+   - [The Impossibility of Fair LLMs](https://arxiv.org/abs/2406.03198), Anthis 2025
+   - [Whose Opinions Do Language Models Reflect?](https://arxiv.org/abs/2303.17548), Santurkar 2023
+2. **Metaethics & moral uncertainty**
+   - [Principia Ethica (excerpt)](https://www.gutenberg.org/ebooks/53430), Moore 1903
+   - What to Do When You Don't Know What to Do, Sepielli 2009
+   - [Beyond Preferences in AI Alignment](https://doi.org/10.1007/s11098-024-02249-w), Zhi-Xuan 2024
+   - [Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback](https://arxiv.org/abs/2404.10271), Conitzer 2024
+3. **Preference & welfare**
+   - [Preference-Based Views of Well-Being](https://doi.org/10.1093/oxfordhb/9780199325818.013.10), Bykvist 2016
+   - What Makes Someone's Life Go Best, Parfit 1984
+   - [Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence](https://doi.org/10.1126/science.aec8352), Cheng 2026
+   - [Durably Reducing Conspiracy Beliefs through Dialogues with AI](https://doi.org/10.1126/science.adq1814), Costello 2024
+4. **Character & virtue**
+   - [Modern Moral Philosophy](https://www.jstor.org/stable/3749051), Anscombe 1958
+   - [Virtue Ethics](https://plato.stanford.edu/entries/ethics-virtue/), Hursthouse & Pettigrove 2026
+   - [Training Large Language Models on Narrow Tasks Can Lead to Broad Misalignment](https://doi.org/10.1038/s41586-025-09937-5), Betley 2026
+   - [Language Models Don't Always Say What They Think](https://arxiv.org/abs/2305.04388), Turpin 2023
+5. **Agency & autonomy**
+   - [Freedom of the Will and the Concept of a Person](https://www.jstor.org/stable/2024717), Frankfurt 1971
+   - [Personal Autonomy](https://plato.stanford.edu/entries/personal-autonomy/), Buss & Westlund 2018
+   - [Agentic Misalignment: How LLMs Could Be Insider Threats](https://arxiv.org/abs/2510.05179), Lynch 2025
+   - [Identifying Indicators of Consciousness in AI Systems](https://doi.org/10.1016/j.tics.2025.10.011), Butlin 2025
+6. **Long-termism & existential risk**
+   - [The Case for Strong Longtermism](https://doi.org/10.1093/9780191979972.003.0003), Greaves & MacAskill 2021
+   - [Alignment Faking in Large Language Models](https://arxiv.org/abs/2412.14093), Greenblatt 2024
+   - [The Liar's Dividend](https://doi.org/10.1017/S0003055423001454), Schiff 2024
