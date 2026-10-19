@@ -1,18 +1,12 @@
 # AI Ethics
 
 Universität Konstanz, winter semester 2026/27
-Wednesdays, Oct 21 – Feb 3 · Carina Hausladen & Tobias Henschen
+Wednesdays, 10:00–11:30 · Carina Hausladen & Tobias Henschen
 
-
-Alignment is an implicitly normative project: every technique for making AI "good" takes a stance on what good means.
-
-
-
-## Goal
 
 In this seminar we work through six debates in moral philosophy and the technical AI ethics concepts that go with each.
 We then use both in a new research area: auditing the alignment documents that AI companies publish, and testing whether their models behave as these documents say.
-Each group takes one document, reads it through the six lenses, and tests whether the models do what it says.
+Each group takes one document, reads it through the six debates, and tests whether the models do what it says.
 
 
 
@@ -49,22 +43,22 @@ Each group takes one document, reads it through the six lenses, and tests whethe
 
 ## Activities
 
-- **Paper presentation (20%):** present one of the week's readings
+- **Reading presentation (20%):** present one of the week's readings
 - **Social media observatory presentation (10%)**
 - **Preliminary results presentation (10%):** Dec 16
 - **Final paper (60%)**
-- **Weekly analysis (pass/fail, required to pass):** your corpus through the week's lens
+- **Weekly analysis (required to pass):** your corpus through the week's lens
 
 
 
 ## Corpora
 
-Each group takes one document, reads it through all six lenses, and tests whether the model does what the document says.
+Four groups, one document each:
 
-1. **[Claude's Constitution](https://www.anthropic.com/constitution)** (Anthropic, 2026) · ~80 pp
-2. **[Model Spec](https://model-spec.openai.com/)** (OpenAI, 2026) · ~100 pp
-3. **[Claude Opus 5 system card](https://anthropic.com/claude-opus-5-system-card)** (Anthropic, 2026), ch. 4, 6, 7 · ~90 pp
-4. **OpenAI system card & shorter texts** · ~95 pp
+1. **[Claude's Constitution](https://www.anthropic.com/constitution)** (Anthropic, 2026)
+2. **[Model Spec](https://model-spec.openai.com/)** (OpenAI, 2026)
+3. **[Claude Opus 5 system card](https://anthropic.com/claude-opus-5-system-card)** (Anthropic, 2026), ch. 4, 6, 7
+4. **OpenAI system card & shorter texts**
    - [GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra) (OpenAI, 2026), §1–10
    - [Collective Constitutional AI](https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input) (Anthropic, 2023)
    - [Collective alignment](https://openai.com/index/collective-alignment-aug-2025-updates/) (OpenAI, 2025)
@@ -75,8 +69,6 @@ Each group takes one document, reads it through all six lenses, and tests whethe
 
 
 ## Readings
-
-Philosophy readings first, then technical readings; topics without a reading are covered in the lecture.
 
 1. **Fairness & pluralism**
    - A Theory of Justice (excerpt), Rawls 1971
