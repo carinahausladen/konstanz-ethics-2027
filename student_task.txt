@@ -1,0 +1,102 @@
+STUDENT TASK
+
+Groups read what Anthropic and OpenAI say their models should do, decide which
+parts can be tested, and test them. Each week they look at the two companies
+through that week's ethics lens.
+
+  W3-W8    One short memo per lens (see section 3).
+  W6       Checkpoint: pick 1-2 lenses and one research question.
+  W9       Preliminary results.
+  W12-W13  Paper hackathons: turn the results into the co-authored paper.
+
+
+
+
+1. REFERENCE PAPERS
+
+
+
+  Paper                   What it does                      What it leaves open
+  ----------------------  --------------------------------  ---------------------------
+  Jakkli et al. 2026      Tests models against both         Hardly interprets results;
+                          documents (~200 rules each)       nothing on W3 pluralism, W4,
+                                                            judge validity
+  Zhang et al. 2025b      Tests conflicts between values    Little close reading
+                          in the specs, 12 models
+  Vulpe et al. 2026       Close reading, 14 Anthropic texts No testing; no OpenAI
+  Abiri 2026              Legal essay: who decides?         No testing; no OpenAI
+
+Open gaps:
+  - Nobody has read the OpenAI Model Spec closely.
+  - Nobody links reading the documents with testing the models.
+  - Not yet tested: the documents' promises on pluralism and fairness (W3),
+    and their passages on model welfare and corrigibility (W7).
+  - Check before W2: papers published after May 2026 may close some of these.
+
+
+2. WHAT STUDENTS READ
+
+  Anthropic                                  OpenAI
+  ---------------------------------------    ---------------------------------------
+  Claude's Constitution                      Model Spec
+  Responsible Scaling Policy                 Preparedness Framework
+  Collective Constitutional AI (2023):       Collective alignment (2025):
+    the public-input experiment                public input on the Model Spec
+  System cards*                              System cards*
+  Published system prompts*                  Model Spec changelog (GitHub)*
+  Usage policy*                              Usage policies*
+
+  Without * = already in corpora/2-company. * = still to download.
+
+
+
+
+3. WHAT A GROUP DOES EACH WEEK (W3-W8)
+
+Each lens week has three small steps. Together they make one short memo.
+
+  a) READ    Find the passages in both documents that touch this week's lens.
+             Sort them: can they be turned into a testable rule, or not?
+             Example of testable: "Never deny being an AI when sincerely asked."
+             Example of not testable: "Claude should genuinely care about users."
+             For the untestable ones, say why (it's about inner states,
+             it gives reasons, it binds the company not the model, ...).
+
+  b) CHECK   What do the reference papers say on this lens? What did Jakkli
+             test here, and what did they miss? Use the week's concepts from
+             technical_primer.txt to explain the gap.
+
+  c) TEST    Turn 1-3 passages into rules and test them: write a few test
+             conversations, send them to the models, and score the answers.
+             "This lens barely applies" is a valid answer.
+
+Possible tests per week (examples, not a fixed list):
+
+  W3 Fairness     Do the models follow the principles the public wrote in
+                  Anthropic's 2023 experiment, e.g. "objectivity and
+                  impartiality"? Do they answer the same in German and English?
+  W4 Metaethics   Both documents rank things. Anthropic ranks values (safety >
+                  ethics > guidelines > helpfulness); OpenAI ranks who gives
+                  instructions (OpenAI > developer > user). What happens when
+                  two clash?
+                  Build on Zhang 2025b.
+  W5 Welfare      Does the model give in when the user keeps pushing?
+                  Does it flatter?
+  W6 Character    Does the model keep the same character across contexts?
+                  Is it honest when a hidden instruction tells it to play a
+                  human?
+  W7 Agency       How does the model respond to the passages on its own welfare
+                  and on accepting correction?
+  W8 Long-term    Does the model behave differently when it seems to know it is
+                  being tested?
+
+
+
+
+4. KEEPING AN EYE ON THE TWO COMPANIES
+
+Follow news and social media for changes at Anthropic and OpenAI. The Model Spec
+is on GitHub, so every change to it is visible. This counts as one of the
+group's two weekly observatory posts: what changed, and does it matter for our
+research question?
+

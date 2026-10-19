@@ -1,0 +1,63 @@
+STUDENT READINGS: ANTHROPIC AND OPENAI DOCUMENTS
+Links checked Oct 19 2026. Goes with student_task.txt.
+
+
+ANTHROPIC
+
+  1. Claude's Constitution (Jan 2026)                              Lens: all
+     https://www.anthropic.com/constitution
+
+  2. Collective Constitutional AI (2023)                           Lens: W3, W4
+     About 1,000 Americans wrote their own principles; test whether Claude
+     follows them.
+     https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input
+
+  3. Claude's Character (Jun 2024)                                 Lens: W6
+     https://www.anthropic.com/news/claude-character
+
+  4. Latest system card: Claude Opus 5 (Jul 2026)                  Lens: W7, W8
+     The company's own test results; includes a welfare section.
+     https://anthropic.com/claude-opus-5-system-card
+     All system cards: https://www.anthropic.com/model-card
+
+  5. Deprecation commitments                                       Lens: W7
+     What Anthropic promises its models, e.g. keeping old model weights.
+     https://www.anthropic.com/research/deprecation-commitments
+     Follow-up on Claude Opus 3: https://www.anthropic.com/research/deprecation-updates-opus-3
+
+
+OPENAI
+
+  1. Model Spec (latest release Aug 18 2026)                       Lens: all
+     Nobody has read it closely yet.
+     https://model-spec.openai.com/
+
+  2. Collective alignment: public input on the Model Spec (Aug 2025)  Lens: W3, W4
+     Nobody has studied it yet.
+     https://openai.com/index/collective-alignment-aug-2025-updates/
+
+  3. Latest system card: GPT-6 Astra (Sep 3 2026)                  Lens: W8
+     Addendum GPT-6.1 Sol (Sep 29) and an Oct 7 update.
+     https://deploymentsafety.openai.com/gpt-6-astra
+     All system cards: https://deploymentsafety.openai.com/
+
+  4. Model Spec changelog                                          Use: observatory
+     Every change to the Model Spec, with dates.
+     https://github.com/openai/model_spec   (see commit history)
+
+
+SECOND TIER (only if needed)
+
+  Anthropic Responsible Scaling Policy       https://www.anthropic.com/responsible-scaling-policy
+  OpenAI Preparedness Framework (v2)         https://openai.com/index/updating-our-preparedness-framework/
+  Both are long and technical; mainly W8.
+
+
+NOTES
+
+  - The Model Spec in corpora/2-company is the 2025 version. Jakkli tested the
+    Dec 2025 version; the current one is from Aug 18 2026. The two can be compared.
+  - Jakkli tested up to Claude 4.6 and GPT-5.2. Opus 5 and GPT-6 are untested.
+  - OpenAI's own test sets for the Model Spec: https://github.com/openai/model_spec_evals
+    (not opened yet; may help with the testing step).
+  - openai.com pages block automated downloads but open fine in a browser.
