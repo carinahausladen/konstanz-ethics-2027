@@ -9,6 +9,8 @@ In this seminar, we examine six debates in moral philosophy alongside the techni
 
 ## Philosophical Debates & Technical Concepts
 
+The seminar goes through six debates in moral philosophy. Each week we pair one debate with papers from AI ethics and AI alignment research. The list below summarizes the technical concepts those papers discuss. Some concepts speak directly to the week's debate; others are background on the research. Part of our work in class is to find out where the philosophy and the technical work actually meet.
+
 1. **Fairness & pluralism:** Fairness metrics, Impossibility result, Bias benchmarks, Measuring model opinions, Political bias, Pluralistic alignment
 2. **Metaethics & moral uncertainty:** Social choice, RLHF (and DPO), Reward model, Expected utility, Incommensurable values
 3. **Preference & welfare:** Engagement optimization, Reward hacking, Stated vs. revealed preferences, Sycophancy, Persuasion & manipulation, Companion AI
@@ -57,8 +59,6 @@ Main task:
 
 
 ## Corpora
-
-Four groups, one document each:
 
 1. **[Claude's Constitution](https://www.anthropic.com/constitution)** (Anthropic, 2026)
 2. **[Model Spec](https://model-spec.openai.com/)** (OpenAI, 2026)
