@@ -75,7 +75,7 @@ Main task:
 
 ## Readings
 
-\* technical reading (pick one of these for your reading presentation)
+\* technical reading
 
 0. **Preliminaries: auditing company documents**
    - \* [How Well Do Models Follow Their Constitutions?](https://arxiv.org/abs/2605.24229), Jakkli 2026
