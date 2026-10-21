@@ -46,13 +46,13 @@ Overleaf: [project link](https://www.overleaf.com/project/6ad8616fcd4a5a0d868801
 ## Activities
 
 - **Reading presentation (20%):** 15 min
-- **Media observatory (10%):** collect 5 posts related to the seminar
+- **Media observatory (5%):** collect 5 posts related to the seminar
 
 Main task:
 
 - **Weekly analysis & updates via Overleaf (required to pass)**
 - **Preliminary results presentation (30%):** Dec 16
-- **Final paper, 6–8 pages (40%):** Feb 4
+- **Final paper, 6–8 pages (45%):** Feb 4
 
 
 
