@@ -1,12 +1,12 @@
 # AI Ethics
 
-Universität Konstanz, winter semester 2026/27
+Universität Konstanz, winter semester 2026/27  
 Wednesdays, 10:00–11:30 · Carina Hausladen & Tobias Henschen
 
 
-In this seminar we work through six debates in moral philosophy and the technical AI ethics concepts that go with each.
-We then use both in a new research area: auditing the alignment documents that AI companies publish, and testing whether their models behave as these documents say.
-Each group takes one document, reads it through the six debates, and tests whether the models do what it says.
+In this seminar, we examine six debates in moral philosophy alongside the technical concepts in AI ethics that relate to them. We then apply these ideas to an emerging area of research: auditing the alignment documents published by AI companies and evaluating whether their models behave in accordance with the principles they set out. Working in groups, students select one document, analyse it through the lens of the six debates, and test whether the corresponding models live up to its stated commitments.
+
+Slides: [slides.com/carinah/ai-ethics](https://slides.com/carinah/ai-ethics)
 
 
 
