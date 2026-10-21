@@ -45,11 +45,14 @@ Overleaf: [project link](https://www.overleaf.com/project/6ad8616fcd4a5a0d868801
 
 ## Activities
 
-- **Reading presentation (20%):** present one of the week's readings
-- **Social media observatory presentation (10%)**
-- **Preliminary results presentation (10%):** Dec 16
-- **Final paper, 6–8 pages (60%):** Feb 4
-- **Weekly analysis (required to pass):** your corpus through the week's lens
+- **Reading presentation (20%):** 15 min
+- **Media observatory (10%):** collect 5 posts related to the seminar
+
+Main task:
+
+- **Weekly analysis & updates via Overleaf (required to pass)**
+- **Preliminary results presentation (30%):** Dec 16
+- **Final paper, 6–8 pages (40%):** Feb 4
 
 
 
