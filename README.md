@@ -6,9 +6,6 @@ Wednesdays, 10:00–11:30 · Carina Hausladen & Tobias Henschen
 
 In this seminar, we examine six debates in moral philosophy alongside the technical concepts in AI ethics that relate to them. We then apply these ideas to an emerging area of research: auditing the alignment documents published by AI companies and evaluating whether their models behave in accordance with the principles they set out. Working in groups, students select one document, analyse it through the lens of the six debates, and test whether the corresponding models live up to its stated commitments.
 
-Slides: [slides.com/carinah/ai-ethics](https://slides.com/carinah/ai-ethics)
-
-
 
 ## Philosophical Debates & Technical Concepts
 
@@ -41,12 +38,17 @@ Slides: [slides.com/carinah/ai-ethics](https://slides.com/carinah/ai-ethics)
 
 
 
+Slides: [slides.com/carinah/ai-ethics](https://slides.com/carinah/ai-ethics)  
+Overleaf: [project link](https://www.overleaf.com/project/6ad8616fcd4a5a0d86880178/share#466b465bb82246c1dfa93e1918bcd6727373c6e48020144d)
+
+
+
 ## Activities
 
 - **Reading presentation (20%):** present one of the week's readings
 - **Social media observatory presentation (10%)**
 - **Preliminary results presentation (10%):** Dec 16
-- **Final paper (60%)**
+- **Final paper, 6–8 pages (60%):** Feb 4
 - **Weekly analysis (required to pass):** your corpus through the week's lens
 
 
