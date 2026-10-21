@@ -77,6 +77,9 @@ Main task:
 
 \* technical reading (pick one of these for your reading presentation)
 
+0. **Preliminaries: auditing company documents**
+   - \* [How Well Do Models Follow Their Constitutions?](https://arxiv.org/abs/2605.24229), Jakkli 2026
+   - \* [Improving Safety Frameworks for Generative AI and Youth Well-Being Policy](https://doi.org/10.1038/s44220-026-00735-0), Mathiyazhagan 2026
 1. **Fairness & pluralism**
    - A Theory of Justice (excerpt), Rawls 1971
    - [The Idea of an Overlapping Consensus](https://doi.org/10.1093/ojls/7.1.1), Rawls 1987
