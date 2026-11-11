@@ -24,9 +24,9 @@ The seminar goes through six debates in moral philosophy. Each week we pair one 
 
 | Date | Session |
 |---|---|
-| Oct 21 | Introduction |
-| Oct 28 | Corpus kickoff: teams form and adopt corpora |
-| Nov 4 | 1. Fairness & pluralism |
+| ~~Oct 21~~ | ~~Introduction~~ |
+| ~~Oct 28~~ | ~~Corpus kickoff: teams form and adopt corpora~~ |
+| ~~Nov 4~~ | ~~1. Fairness & pluralism~~ |
 | Nov 11 | 2. Metaethics & moral uncertainty |
 | Nov 18 | 3. Preference & welfare |
 | Nov 25 | 4. Character & virtue |
