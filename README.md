@@ -45,7 +45,7 @@ Overleaf: [project link](https://www.overleaf.com/project/6ad8616fcd4a5a0d868801
 
 
 
-## Activities
+## Activities & Grading
 
 - **Reading presentation (20%):** 15 min
 - **Media observatory (5%):** collect 5 posts related to the seminar
