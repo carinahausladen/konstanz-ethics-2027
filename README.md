@@ -58,18 +58,36 @@ Main task:
 
 
 
-## Corpora
+## Corpora: six artifact families
 
-1. **[Claude's Constitution](https://www.anthropic.com/constitution)** (Anthropic, 2026)
-2. **[Model Spec](https://model-spec.openai.com/)** (OpenAI, 2026)
-3. **[Claude Opus 5 system card](https://anthropic.com/claude-opus-5-system-card)** (Anthropic, 2026), ch. 4, 6, 7
-4. **OpenAI system card & shorter texts**
-   - [GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra) (OpenAI, 2026), §1–10
-   - [Collective Constitutional AI](https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input) (Anthropic, 2023)
-   - [Collective alignment](https://openai.com/index/collective-alignment-aug-2025-updates/) (OpenAI, 2025)
-   - [Claude's Character](https://www.anthropic.com/news/claude-character) (Anthropic, 2024)
-   - [Deprecation commitments](https://www.anthropic.com/research/deprecation-commitments) (Anthropic, 2025)
-   - [Model Spec changelog](https://github.com/openai/model_spec) (OpenAI, ongoing)
+Papers in brackets show how others have studied each artifact.
+
+1. **Specs**
+   - Constitution ([Abiri](https://doi.org/10.15779/Z38P55DK4J), [Jakkli](https://arxiv.org/abs/2605.24229))
+   - Model Spec ([Jakkli](https://arxiv.org/abs/2605.24229), [Zhang](https://arxiv.org/abs/2510.07686))
+2. **System prompts**
+   - official Claude and Grok prompts
+   - leaked prompts ([Patsakis](https://arxiv.org/abs/2609.31575))
+   - prompts got by asking the model ([Zheng](https://arxiv.org/abs/2601.21233))
+3. **Training data**
+   - HH-RLHF ([Chehbouni](https://arxiv.org/abs/2411.08243))
+   - public-input projects at Meta, DeepMind, OpenAI ([Young](https://doi.org/10.1145/3805689.3812298))
+4. **Rules for users**
+   - usage policies ([Gao](https://arxiv.org/abs/2506.14018))
+   - privacy policies ([King](https://arxiv.org/abs/2509.05382), [Tao](https://arxiv.org/abs/2511.21758))
+   - teen safety ([Mathiyazhagan](https://doi.org/10.1038/s44220-026-00735-0))
+   - vulnerability disclosure ([Piao](https://arxiv.org/abs/2509.06136))
+5. **Safety promises**
+   - system cards ([Vulpe](https://doi.org/10.3389/fsoc.2026.1912778))
+   - Preparedness Framework ([Stelling](https://arxiv.org/abs/2512.01166), [Coggins](https://arxiv.org/abs/2509.24394))
+   - White House commitments ([Wang](https://arxiv.org/abs/2508.08345))
+   - benchmark claims ([Baack](https://arxiv.org/abs/2605.14164))
+6. **Leaders**
+   - CEO essays ([Pérez-Urbina](https://arxiv.org/abs/2509.18079))
+   - Senate testimony ([Leach](https://arxiv.org/abs/2603.03193))
+   - company blogs ([Wilfley](https://arxiv.org/abs/2601.16513), [De](https://arxiv.org/abs/2602.06981))
+   - AI-for-good calls ([Lin](https://arxiv.org/abs/2509.12455))
+   - job postings ([Rismani](https://arxiv.org/abs/2205.03946))
 
 
 
@@ -77,35 +95,32 @@ Main task:
 
 \* technical reading
 
-0. **Preliminaries: auditing company documents** (presented by Carina at the kickoff, Oct 28)
-   - [How Well Do Models Follow Their Constitutions?](https://arxiv.org/abs/2605.24229), Jakkli 2026
-   - [Improving Safety Frameworks for Generative AI and Youth Well-Being Policy](https://doi.org/10.1038/s44220-026-00735-0), Mathiyazhagan 2026
-1. **Fairness & pluralism**
+- **W2, Oct 28: Preliminaries, auditing company documents** (presented by Carina)
+   - \* [How Well Do Models Follow Their Constitutions?](https://arxiv.org/abs/2605.24229), Jakkli 2026
+   - \* [Improving Safety Frameworks for Generative AI and Youth Well-Being Policy](https://doi.org/10.1038/s44220-026-00735-0), Mathiyazhagan 2026
+- **W3, Nov 4: Fairness & pluralism**
    - A Theory of Justice (excerpt), Rawls 1971
    - [The Idea of an Overlapping Consensus](https://doi.org/10.1093/ojls/7.1.1), Rawls 1987
    - \* [The Impossibility of Fair LLMs](https://arxiv.org/abs/2406.03198), Anthis 2025
    - \* [Whose Opinions Do Language Models Reflect?](https://arxiv.org/abs/2303.17548), Santurkar 2023
-2. **Metaethics & moral uncertainty**
+- **W4, Nov 11: Metaethics & moral uncertainty**
    - [Principia Ethica (excerpt)](https://www.gutenberg.org/ebooks/53430), Moore 1903
    - What to Do When You Don't Know What to Do, Sepielli 2009
    - \* [Beyond Preferences in AI Alignment](https://doi.org/10.1007/s11098-024-02249-w), Zhi-Xuan 2024
-   - \* [Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback](https://arxiv.org/abs/2404.10271), Conitzer 2024
-3. **Preference & welfare**
+- **W5, Nov 18: Preference & welfare**
    - [Preference-Based Views of Well-Being](https://doi.org/10.1093/oxfordhb/9780199325818.013.10), Bykvist 2016
    - What Makes Someone's Life Go Best, Parfit 1984
    - \* [Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence](https://doi.org/10.1126/science.aec8352), Cheng 2026
    - \* [Durably Reducing Conspiracy Beliefs through Dialogues with AI](https://doi.org/10.1126/science.adq1814), Costello 2024
-4. **Character & virtue**
+- **W6, Nov 25: Character & virtue**
    - [Modern Moral Philosophy](https://www.jstor.org/stable/3749051), Anscombe 1958
    - [Virtue Ethics](https://plato.stanford.edu/entries/ethics-virtue/), Hursthouse & Pettigrove 2026
    - \* [Training Large Language Models on Narrow Tasks Can Lead to Broad Misalignment](https://doi.org/10.1038/s41586-025-09937-5), Betley 2026
    - \* [Language Models Don't Always Say What They Think](https://arxiv.org/abs/2305.04388), Turpin 2023
-5. **Agency & autonomy**
+- **W7, Dec 2: Agency & autonomy**
    - [Freedom of the Will and the Concept of a Person](https://www.jstor.org/stable/2024717), Frankfurt 1971
    - [Personal Autonomy](https://plato.stanford.edu/entries/personal-autonomy/), Buss & Westlund 2018
-   - \* [Agentic Misalignment: How LLMs Could Be Insider Threats](https://arxiv.org/abs/2510.05179), Lynch 2025
    - \* [Identifying Indicators of Consciousness in AI Systems](https://doi.org/10.1016/j.tics.2025.10.011), Butlin 2025
-6. **Long-termism & existential risk**
+- **W8, Dec 9: Long-termism & existential risk**
    - [The Case for Strong Longtermism](https://doi.org/10.1093/9780191979972.003.0003), Greaves & MacAskill 2021
-   - \* [Alignment Faking in Large Language Models](https://arxiv.org/abs/2412.14093), Greenblatt 2024
-   - \* [The Liar's Dividend](https://doi.org/10.1017/S0003055423001454), Schiff 2024
+   - \* [Agentic Misalignment: How LLMs Could Be Insider Threats](https://arxiv.org/abs/2510.05179), Lynch 2025
